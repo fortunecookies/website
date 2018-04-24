@@ -1,0 +1,11 @@
+.DS_Store
+*.log
+*.log.*
+
+node_modules
+
+dist
+coverage
+
+.env
+notes
