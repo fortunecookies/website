@@ -2,10 +2,10 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import { node, bool, func } from 'prop-types'
 import { Link } from 'react-router-dom'
-import { mix } from 'polished'
+import { mix, rgba } from 'polished'
 
 import SmallCaps from 'components/SmallCaps'
-import { primaryColor, white, black, grey, greyDark, borderColor } from 'styles/colors'
+import { primaryColor, white, black } from 'styles/colors'
 import { animationTime, animationCurve, borderRadius, buttonHeightMobile, buttonHeightDesktop } from 'styles/global'
 import * as spacing from 'styles/spacing'
 import { media } from 'styles/media'
@@ -30,6 +30,7 @@ export const ButtonContainer = styled.button`
   ${props => props.primary && css`
     background-color: ${primaryColor};
     color: ${white};
+    box-shadow: 0 8px 22px 0 ${rgba(primaryColor, 0.4)};
 
     &:hover,
     &:focus,
