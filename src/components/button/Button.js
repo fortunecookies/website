@@ -2,7 +2,7 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import { node, bool, func } from 'prop-types'
 import { Link } from 'react-router-dom'
-import { mix, rgba } from 'polished'
+import { mix, rgba, stripUnit } from 'polished'
 
 import SmallCaps from 'components/SmallCaps'
 import { primaryColor, white, black } from 'styles/colors'
@@ -16,14 +16,26 @@ export const ButtonContainer = styled.button`
   justify-content: center;
   height: ${buttonHeightMobile};
   border-radius: ${borderRadius};
-  padding: 0 ${spacing.xLarge};
+  padding: 0 ${spacing.large};
   cursor: pointer;
   text-align: center;
   transition: background-color ${animationTime} ${animationCurve}, border-color ${animationTime} ${animationCurve}, transform ${animationTime} ${animationCurve}, opacity ${animationTime} ${animationCurve}, color ${animationTime} ${animationCurve};
 
+  ${props => props.large && css`
+    height: ${stripUnit(buttonHeightMobile) * 1.05 + 'px'};
+  `}
+
+  ${media.small`
+    padding: 0 ${spacing.xLarge};
+  `};
+
   ${media.medium`
     height: ${buttonHeightDesktop};
     padding: 0 ${spacing.xxLarge};
+
+    ${props => props.large && css`
+      height: ${stripUnit(buttonHeightDesktop) * 1.125 + 'px'};
+    `}
   `};
 
   ${media.large`
@@ -77,8 +89,8 @@ export const ButtonLinkContainer = ButtonContainer.withComponent(Link).extend`
   position: relative;
 `
 
-const Button = ({ children, primary, secondary, full, Container = ButtonContainer, ...rest }) => (
-  <Container primary={primary} secondary={secondary} full={full} {...rest}>
+const Button = ({ children, primary, secondary, large, full, Container = ButtonContainer, ...rest }) => (
+  <Container primary={primary} secondary={secondary} large={large} full={full} {...rest}>
     <SmallCaps>{children}</SmallCaps>
   </Container>
 )
@@ -87,12 +99,13 @@ Button.propTypes = {
   children: node.isRequired,
   primary: bool,
   secondary: bool,
+  large: bool,
   full: bool,
   Container: func
 }
 
-export const ButtonLink = ({ children, primary, secondary, full, ...rest }) => (
-  <ButtonLinkContainer primary={primary} secondary={secondary} full={full} {...rest}>
+export const ButtonLink = ({ children, primary, secondary, large, full, ...rest }) => (
+  <ButtonLinkContainer primary={primary} secondary={secondary} large={large} full={full} {...rest}>
     <SmallCaps>{children}</SmallCaps>
   </ButtonLinkContainer>
 )
@@ -101,6 +114,7 @@ ButtonLink.propTypes = {
   children: node.isRequired,
   primary: bool,
   secondary: bool,
+  large: bool,
   full: bool
 }
 

@@ -16,11 +16,11 @@ const Container = styled.div`
   ${verticalPadding`3rem`};
 
   ${media.small`
-    ${verticalPadding`4rem`};
+    ${verticalPadding`5rem`};
   `};
 
   ${media.medium`
-    ${verticalPadding`5rem`};
+    ${verticalPadding`6.5rem`};
   `};
 
   ${mediaDown.medium`
@@ -28,11 +28,11 @@ const Container = styled.div`
   `};
 
   ${media.large`
-    ${verticalPadding`6rem`};
+    ${verticalPadding`8rem`};
   `};
 
   ${media.xLarge`
-    ${verticalPadding`7.5rem`};
+    ${verticalPadding`10rem`};
   `};
 `
 
@@ -127,8 +127,8 @@ const Hero = () => (
           </MobileFigure>
           <Subtitle>FortuneCookies are digital collectibles consisting of a charm, limited edition artwork, and a made-specifically-for-you lucky saying.</Subtitle>
           <ButtonGroup>
-            <ButtonLink to="/bake-sale/" primary>View bake sale</ButtonLink>
-            <ButtonLink to="/how-to-play/" secondary>How to play</ButtonLink>
+            <ButtonLink large to="/bake-sale/" primary>View bake sale</ButtonLink>
+            <ButtonLink large to="/how-to-play/" secondary>How to play</ButtonLink>
           </ButtonGroup>
         </Main>
         <DesktopFigure>

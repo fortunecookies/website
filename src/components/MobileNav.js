@@ -98,9 +98,9 @@ class MobileNav extends Component {
         <Portal>
           <Overlay visible={this.state.visible}>
             <Inner>
-              <Link exact to="#"><Label>How to play</Label></Link>
-              <Link exact to="#"><Label>FAQs</Label></Link>
-              <Link exact to="#"><Label>Bake Sale</Label></Link>
+              <Link exact to="/how-to-play/"><Label>How to play</Label></Link>
+              <Link exact to="/faqs/"><Label>FAQs</Label></Link>
+              <Link exact to="/bake-sale/"><Label>Bake Sale</Label></Link>
               <Link exact to="#"><Label>Sign In</Label></Link>
             </Inner>
           </Overlay>
