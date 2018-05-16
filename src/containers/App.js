@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import { object } from 'prop-types'
 import { Switch } from 'react-router'
-import { BrowserRouter as Router } from 'react-router-dom'
-import { AsyncRoute } from 'layouts/asyncComponents'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/es/integration/react'
+
+import Home from 'views/Home'
+import Faqs from 'views/Faqs'
 
 export default class App extends Component {
   static propTypes = {
@@ -20,7 +22,8 @@ export default class App extends Component {
         <PersistGate persistor={persistor}>
           <Router>
             <Switch>
-              <AsyncRoute path="/" loader={() => import('views/Home')} />
+              <Route path="/" exact component={Home} />
+              <Route path="/faqs" exact component={Faqs} />
             </Switch>
           </Router>
         </PersistGate>

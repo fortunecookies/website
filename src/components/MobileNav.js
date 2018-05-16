@@ -7,11 +7,16 @@ import { connect } from 'react-redux'
 
 import { primaryColor, white } from 'styles/colors'
 import { square } from 'styles/global'
+import { media } from 'styles/media'
 import * as spacing from 'styles/spacing'
 import Icon from 'components/Icon'
 
 const Container = styled.div`
   position: relative;
+
+  ${media.medium`
+    display: none;
+  `};
 `
 
 const Trigger = styled.button`
@@ -52,7 +57,15 @@ const Inner = styled.div`
 `
 
 const Link = styled(NavLink)`
-  color: ${white}
+  color: ${white};
+  width: 100%;
+  text-align: center;
+  display: block;
+  margin-bottom: ${spacing.medium};
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 `
 
 @connect(null)

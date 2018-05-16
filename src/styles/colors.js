@@ -1,6 +1,7 @@
 // Primary
 
 export const red = '#F74752'
+export const peach = '#FFC174'
 
 // Greys
 
@@ -22,5 +23,6 @@ export const purple = '#5954EA'
 // Set colors
 
 export const primaryColor = red
+export const secondaryColor = peach
 export const backgroundColor = offWhite
 export const borderColor = greyLightest
