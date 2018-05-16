@@ -24,6 +24,9 @@ export const ButtonContainer = styled.button`
   ${media.medium`
     height: ${buttonHeightDesktop};
     padding: 0 ${spacing.xxLarge};
+  `};
+
+  ${media.large`
     min-width: 230px;
   `};
 

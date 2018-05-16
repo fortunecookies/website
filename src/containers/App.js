@@ -7,6 +7,7 @@ import { PersistGate } from 'redux-persist/es/integration/react'
 
 import Home from 'views/Home'
 import Faqs from 'views/Faqs'
+import HowToPlay from 'views/HowToPlay'
 
 export default class App extends Component {
   static propTypes = {
@@ -24,6 +25,7 @@ export default class App extends Component {
             <Switch>
               <Route path="/" exact component={Home} />
               <Route path="/faqs" exact component={Faqs} />
+              <Route path="/how-to-play" exact component={HowToPlay} />
             </Switch>
           </Router>
         </PersistGate>

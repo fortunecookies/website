@@ -7,6 +7,7 @@ import { connect } from 'react-redux'
 
 import { primaryColor, white } from 'styles/colors'
 import { square } from 'styles/global'
+import { H1 } from 'styles/typography'
 import { media } from 'styles/media'
 import * as spacing from 'styles/spacing'
 import Icon from 'components/Icon'
@@ -41,6 +42,10 @@ const Overlay = styled.div`
   z-index: 300;
   display: none;
 
+  ${media.medium`
+    display: none;
+  `};
+
   ${props => props.visible && css`
     display: block;
   `}
@@ -56,7 +61,7 @@ const Inner = styled.div`
   justify-content: center;
 `
 
-const Link = styled(NavLink)`
+export const Link = styled(NavLink)`
   color: ${white};
   width: 100%;
   text-align: center;
@@ -66,6 +71,10 @@ const Link = styled(NavLink)`
   &:last-child {
     margin-bottom: 0;
   }
+`
+
+export const Label = styled(H1)`
+  color: ${white};
 `
 
 @connect(null)
@@ -89,10 +98,10 @@ class MobileNav extends Component {
         <Portal>
           <Overlay visible={this.state.visible}>
             <Inner>
-              <Link exact to="#">How to play</Link>
-              <Link exact to="#">FAQs</Link>
-              <Link exact to="#">Bake Sale</Link>
-              <Link exact to="#">Sign In</Link>
+              <Link exact to="#"><Label>How to play</Label></Link>
+              <Link exact to="#"><Label>FAQs</Label></Link>
+              <Link exact to="#"><Label>Bake Sale</Label></Link>
+              <Link exact to="#"><Label>Sign In</Label></Link>
             </Inner>
           </Overlay>
         </Portal>

@@ -5,8 +5,8 @@ import styled, { injectGlobal } from 'styled-components'
 import { stripUnit, mix } from 'polished'
 
 // Font family
-export const fontFamily =
-  "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"
+export const fontBody = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"
+export const fontHeading = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"
 
 // Font weights
 export const fontRegular = 400
@@ -17,7 +17,7 @@ export const fontHeavy = 800
 
 // Line height
 export const baseLineHeight = 1.5
-export const headingLineHeight = 1.25
+export const headingLineHeight = 1
 
 // Font sizes
 export const regularFontSize = '16px'
@@ -26,11 +26,12 @@ export const tinyFontSize = '12px'
 
 export const H1 = styled.h1`
   font-weight: ${fontHeavy};
-  font-size: 26px;
+  font-size: 42px;
   line-height: ${headingLineHeight};
-  ${media.small`font-size: 28px`};
-  ${media.medium`font-size: 30px`};
-  ${media.large`font-size: 32px`};
+  text-transform: uppercase;
+  ${media.small`font-size: 48px`};
+  ${media.medium`font-size: 56px`};
+  ${media.large`font-size: 64px`};
 `
 
 export const H2 = styled.h2`
@@ -59,7 +60,7 @@ export const H4 = styled.h4`
 injectGlobal`
 
   body {
-    font-family: ${fontFamily};
+    font-family: ${fontBody};
     line-height: ${baseLineHeight};
     color: ${grey};
     font-size: ${stripUnit(regularFontSize) - 1 + 'px'};
@@ -76,6 +77,7 @@ injectGlobal`
   h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0.5em;
     color: ${greyDark};
+    font-family: ${fontHeading};
   }
 
   p {

@@ -8,7 +8,7 @@ import { media } from 'styles/media'
 const Container = styled.div`
   width: 100%;
   margin: 0 auto;
-  max-width: ${props => (props.narrow ? '900px' : '1200px')};
+  max-width: ${props => (props.narrow ? '900px' : '1120px')};
   padding-left: ${spacing.large};
   padding-right: ${spacing.large};
 
