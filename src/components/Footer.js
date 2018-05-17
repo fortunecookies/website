@@ -45,15 +45,6 @@ const Main = styled.main`
   `};
 `
 
-const Social = styled.div`
-  display: inline-flex;
-  margin: -${spacing.small};
-`
-
-const SocialLink = styled.a`
-  padding: ${spacing.small};
-`
-
 const Copyright = styled.small`
   display: block;
   font-size: ${tinyFontSize};
@@ -68,7 +59,7 @@ const Copyright = styled.small`
   `}
 `
 
-const List = styled.div`
+const FooterList = styled.div`
   display: inline-flex;
   margin: 0 -${spacing.tiny};
 
@@ -87,22 +78,31 @@ const FooterLink = styled(Link)`
   `};
 `
 
+const SocialList = styled.div`
+  display: inline-flex;
+  margin: -${spacing.small};
+`
+
+const SocialLink = styled.a`
+  padding: ${spacing.small};
+`
+
 const Footer = () => (
   <Container>
     <Main>
       <Copyright>Copyright 2018, Consensys Inc.</Copyright>
-      <List>
+      <FooterList>
         <FooterLink to="/terms/">Terms of Use</FooterLink>
         <FooterLink to="/privacy-policy/">Privacy Policy</FooterLink>
         <FooterLink to="/about/">About</FooterLink>
         <FooterLink to="/help/">Help & Support</FooterLink>
-      </List>
+      </FooterList>
     </Main>
-    <Social>
+    <SocialList>
       <SocialLink href="https://www.twitter.com" target="_blank"><Icon icon="twitter" brand /></SocialLink>
       <SocialLink href="https://www.telegram.com" target="_blank"><Icon icon="telegram" brand /></SocialLink>
       <SocialLink href="https://www.medium.com" target="_blank"><Icon icon="medium" brand /></SocialLink>
-    </Social>
+    </SocialList>
   </Container>
 )
 

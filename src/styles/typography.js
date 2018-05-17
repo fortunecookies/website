@@ -1,8 +1,8 @@
 import { media } from 'styles/media'
-import { greyDark, grey, borderColor, black } from 'styles/colors'
+import { greyDark, grey, primaryColor } from 'styles/colors'
 import { animationTime, animationCurve } from 'styles/global'
 import styled, { injectGlobal } from 'styled-components'
-import { stripUnit, mix } from 'polished'
+import { stripUnit, rgba } from 'polished'
 
 // Font family
 export const fontBody = "Graphik, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"
@@ -84,12 +84,13 @@ injectGlobal`
     margin-bottom: 1.25em;
 
     a {
-      border-bottom: 1px solid ${borderColor};
+      border-bottom: 1px solid transparent;
+      color: ${primaryColor};
       transition: border-color ${animationTime} ${animationCurve};
 
       &:hover,
       &:focus {
-        border-color: ${mix(0.85, borderColor, black)};
+        border-color: ${rgba(primaryColor, 0.15)};
       }
     }
   }

@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
 import InlineSVG from 'svg-inline-react'
-import { rgba, stripUnit } from 'polished'
+import { stripUnit } from 'polished'
 
 import * as spacing from 'styles/spacing'
 import { greyDark, primaryColor, white, secondaryColor } from 'styles/colors'
@@ -11,16 +11,18 @@ import { media, mediaDown } from 'styles/media'
 
 const Container = styled.div`
   position: relative;
+  z-index: 10;
   padding-top: ${spacing.small};
 
   ${media.medium`
-    padding-left: ${spacing.xxLarge};
-    padding-right: ${spacing.xxLarge};
+    padding-top: ${spacing.xLarge};
+    padding-left: 56px;
+    padding-right: 56px;
   `};
 
   ${media.large`
-    padding-left: 56px;
-    padding-right: 56px;
+    padding-left: 72px;
+    padding-right: 72px;
   `};
 
   ${media.xLarge`
@@ -33,7 +35,7 @@ const StyledLink = SmallCaps.withComponent(NavLink).extend`
   position: relative;
   color: ${greyDark};
   text-align: center;
-  padding: ${spacing.small} 0;
+  padding: ${spacing.medium};
 
   &.${'active'} {
     color: ${primaryColor};
@@ -50,10 +52,11 @@ const Tag = styled.span`
   position: absolute;
   top: 100%;
   left: 50%;
+  margin-top: -${spacing.small};
   transform: translateX(-50%);
   font-size: 10px;
   padding: ${spacing.tiny} ${stripUnit(spacing.medium) * 1.25 + 'px'};
-  clip-path: polygon(100% 0%, 90% 50%, 100% 100%, 0 100%, 10% 50%, 0 0);
+  clip-path: polygon(100% 0%, 92% 50%, 100% 100%, 0 100%, 8% 50%, 0 0);
 `
 
 const List = styled.div`
@@ -68,10 +71,27 @@ const List = styled.div`
 
 const LogoWrap = styled(NavLink)`
   flex-shrink: 0;
+
+  ${media.medium`
+    transform: translateY(-${spacing.large});
+  `};
+`
+
+const Logo = styled.img`
+  width: 152px;
+  height: 106px;
+  display: block;
+
+  ${media.small`
+    width: 182px;
+    height: 127px;
+  `};
 `
 
 const Divider = styled.img`
   flex-shrink: 0;
+  width: 12px;
+  height: 20px;
 
   ${mediaDown.medium`
     display: none;
@@ -84,6 +104,10 @@ const Cloud = styled(InlineSVG)`
   width: 142px;
   height: 21px;
 
+  &:first-child {
+    transform: scaleX(-1);
+  }
+
   ${mediaDown.large`
     display: none;
   `};
@@ -91,39 +115,59 @@ const Cloud = styled(InlineSVG)`
 
 const Lantern = styled.img`
   position: absolute;
-  top: 72px;
-  left: ${spacing.large};
+  top: ${spacing.xxLarge};
+  left: ${spacing.small};
+  width: 34px;
+  height: 145px;
+
+  ${media.medium`
+    top: 80px;
+    left: ${spacing.medium};
+  `};
+
+  ${media.large`
+    width: 53px;
+    height: 226px;
+  `};
+
+  ${media.xLarge`
+    left: ${spacing.large};
+  `};
 
   &:last-child {
-    right: ${spacing.large};
+    right: ${spacing.small};
     left: auto;
-  }
 
-  ${mediaDown.xLarge`
-    display: none;
-  `};
+    ${media.medium`
+      right: ${spacing.medium};
+    `};
+
+    ${media.xLarge`
+      right: ${spacing.large};
+    `};
+  }
 `
 
 const Nav = () => (
   <Container>
     <List>
-      <Cloud src={require(`static/images/ornaments/cloud.svg`)} />
+      <Cloud src={require(`static/images/ornaments/cloud.svg`)} raw />
       <StyledLink exact to="/how-to-play/">How to play</StyledLink>
-      <Divider src="https://placehold.it/12x20" />
+      <Divider src={require(`static/images/ornaments/ethereum.png`)} />
       <StyledLink exact to="/faqs/">FAQs</StyledLink>
       <LogoWrap to="/">
-        <img src="https://placehold.it/182x127" />
+        <Logo src={require(`static/images/logo.png`)} />
       </LogoWrap>
       <StyledLink exact to="/bake-sale/">
         Bake Sale
         <Tag>Open</Tag>
       </StyledLink>
-      <Divider src="https://placehold.it/12x20" />
+      <Divider src={require(`static/images/ornaments/ethereum.png`)} />
       <StyledLink exact to="#">Sign In</StyledLink>
-      <Cloud src={require(`static/images/ornaments/cloud.svg`)} />
+      <Cloud src={require(`static/images/ornaments/cloud.svg`)} raw />
     </List>
-    <Lantern src="https://placehold.it/53x226" />
-    <Lantern src="https://placehold.it/53x226" />
+    <Lantern src={require(`static/images/ornaments/lantern.png`)} />
+    <Lantern src={require(`static/images/ornaments/lantern.png`)} />
   </Container>
 )
 

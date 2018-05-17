@@ -13,14 +13,16 @@ import ButtonGroup from 'components/button/ButtonGroup'
 const Container = styled.div`
   width: 100%;
   background-color: ${white};
-  ${verticalPadding`3rem`};
+  ${verticalPadding`3.5rem`};
 
   ${media.small`
-    ${verticalPadding`5rem`};
+    padding-top: 4rem;
+    padding-bottom: 5rem;
   `};
 
   ${media.medium`
-    ${verticalPadding`6.5rem`};
+    padding-top: 5rem;
+    padding-bottom: 6.5rem;
   `};
 
   ${mediaDown.medium`
@@ -28,16 +30,19 @@ const Container = styled.div`
   `};
 
   ${media.large`
-    ${verticalPadding`8rem`};
+    padding-top: 6rem;
+    padding-bottom: 8rem;
   `};
 
   ${media.xLarge`
-    ${verticalPadding`10rem`};
+    padding-top: 7.5rem;
+    padding-bottom: 10rem;
   `};
 `
 
 const Title = styled(H1)`
   margin-bottom: ${spacing.large};
+  padding: 0 ${spacing.medium};
 
   ${media.small`
     margin-bottom: ${spacing.xLarge};
@@ -45,6 +50,7 @@ const Title = styled(H1)`
 
   ${media.medium`
     margin-bottom: ${spacing.large};
+    padding-left: 0;
     padding-right: ${spacing.xxLarge};
   `};
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { string } from 'prop-types'
+import { string, node } from 'prop-types'
 
 import * as spacing from 'styles/spacing'
 import { media } from 'styles/media'
@@ -71,7 +71,7 @@ const Header = ({ title, subtitle }) => (
 
 Header.propTypes = {
   title: string.isRequired,
-  subtitle: string
+  subtitle: node
 }
 
 export default Header
