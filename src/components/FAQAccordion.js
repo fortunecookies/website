@@ -38,6 +38,10 @@ const Question = styled.header`
   ${media.small`
     padding: ${spacing.large};
   `};
+
+  ${media.large`
+    padding: ${spacing.xLarge} ${spacing.large};
+  `};
 `
 
 const QuestionTitle = styled(H3)`
