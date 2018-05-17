@@ -45,6 +45,11 @@ const Title = styled(H1)`
 
   ${media.medium`
     margin-bottom: ${spacing.large};
+    padding-right: ${spacing.xxLarge};
+  `};
+
+  ${media.large`
+    padding-right: ${spacing.xxxLarge};
   `};
 `
 
@@ -85,7 +90,7 @@ const Main = styled.main`
   `};
 
   ${media.xLarge`
-    padding-right: ${spacing.xxxLarge};
+    padding-right: ${spacing.xxLarge};
   `};
 `
 
@@ -95,6 +100,7 @@ const MobileFigure = styled.figure`
 
   ${media.small`
     margin-bottom: ${spacing.large};
+    padding: 0 ${spacing.large};
   `};
 
   ${media.medium`
@@ -123,7 +129,7 @@ const Hero = () => (
         <Main>
           <Title>Collect good luck charms on Ethereum</Title>
           <MobileFigure>
-            <img src="https://placehold.it/790x612" />
+            <img src={require(`static/images/illustrations/hero.png`)} />
           </MobileFigure>
           <Subtitle>FortuneCookies are digital collectibles consisting of a charm, limited edition artwork, and a made-specifically-for-you lucky saying.</Subtitle>
           <ButtonGroup>
@@ -132,7 +138,7 @@ const Hero = () => (
           </ButtonGroup>
         </Main>
         <DesktopFigure>
-          <img src="https://placehold.it/790x612" />
+          <img src={require(`static/images/illustrations/hero.png`)} />
         </DesktopFigure>
       </Inner>
     </Wrapper>

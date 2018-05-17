@@ -27,7 +27,7 @@ const Fill = styled.div`
   background-color: ${secondaryColor};
   transition: width ${animationTime} ${animationCurve};
   border-radius: 6px;
-  box-shadow: 0 8px 22px 0 ${rgba(secondaryColor, 0.4)};
+  box-shadow: 0 8px 16px 0 ${rgba(secondaryColor, 0.4)};
 
   ${media.medium`
     border-radius: ${spacing.small};

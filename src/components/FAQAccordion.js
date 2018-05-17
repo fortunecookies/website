@@ -7,7 +7,7 @@ import * as spacing from 'styles/spacing'
 import Icon from 'components/Icon'
 import { greyDark, borderColor, primaryColor } from 'styles/colors'
 import { media } from 'styles/media'
-import { H4 } from 'styles/typography'
+import { H3 } from 'styles/typography'
 
 const Container = styled.div`
   position: relative;
@@ -40,7 +40,7 @@ const Question = styled.header`
   `};
 `
 
-const QuestionTitle = styled(H4)`
+const QuestionTitle = styled(H3)`
   margin-bottom: 0;
   color: ${greyDark};
   flex-grow: 1;

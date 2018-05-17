@@ -27,7 +27,7 @@ const Trigger = styled.button`
   background-color: ${white};
   color: ${primaryColor};
   z-index: 400;
-  box-shadow: 0 8px 22px 0 ${rgba(primaryColor, 0.4)};
+  box-shadow: 0 8px 16px 0 ${rgba(primaryColor, 0.3)};
   border-radius: 50%;
   ${square`50px`};
 `
@@ -98,6 +98,7 @@ class MobileNav extends Component {
         <Portal>
           <Overlay visible={this.state.visible}>
             <Inner>
+              <Link exact to="/"><Label>Home</Label></Link>
               <Link exact to="/how-to-play/"><Label>How to play</Label></Link>
               <Link exact to="/faqs/"><Label>FAQs</Label></Link>
               <Link exact to="/bake-sale/"><Label>Bake Sale</Label></Link>

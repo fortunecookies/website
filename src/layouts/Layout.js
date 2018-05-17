@@ -5,9 +5,11 @@ import { AsyncRoute } from 'layouts/asyncComponents'
 
 import MobileNav from 'components/MobileNav'
 import Footer from 'components/Footer'
+import Nav from 'components/Nav'
 
 const Layout = () => (
   <>
+    <Nav />
     <Switch>
       <AsyncRoute exact path="/" loader={() => import('views/Home')} />
       <AsyncRoute exact path="/faqs/" loader={() => import('views/Faqs')} />

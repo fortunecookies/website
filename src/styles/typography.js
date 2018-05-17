@@ -5,15 +5,13 @@ import styled, { injectGlobal } from 'styled-components'
 import { stripUnit, mix } from 'polished'
 
 // Font family
-export const fontBody = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"
-export const fontHeading = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"
+export const fontBody = "Graphik, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"
+export const fontHeading = "TitlingGothicFBComp-Medium"
 
 // Font weights
 export const fontRegular = 400
 export const fontMedium = 500
-export const fontSemibold = 600
 export const fontBold = 700
-export const fontHeavy = 800
 
 // Line height
 export const baseLineHeight = 1.5
@@ -25,33 +23,34 @@ export const smallFontSize = '14px'
 export const tinyFontSize = '12px'
 
 export const H1 = styled.h1`
-  font-weight: ${fontHeavy};
-  font-size: 42px;
+  font-weight: ${fontMedium};
+  font-size: 48px;
   line-height: ${headingLineHeight};
-  text-transform: uppercase;
-  ${media.small`font-size: 48px`};
-  ${media.medium`font-size: 56px`};
-  ${media.large`font-size: 64px`};
+  ${media.small`font-size: 56px`};
+  ${media.medium`font-size: 64px`};
+  ${media.large`font-size: 72px`};
 `
 
 export const H2 = styled.h2`
-  font-weight: ${fontHeavy};
-  font-size: 20px;
+  font-weight: ${fontMedium};
+  font-size: 40px;
   line-height: ${headingLineHeight};
-  ${media.medium`font-size: 22px`};
-  ${media.large`font-size: 24px`};
+  ${media.small`font-size: 44px`};
+  ${media.medium`font-size: 50px`};
+  ${media.large`font-size: 56px`};
 `
 
 export const H3 = styled.h3`
-  font-weight: ${fontHeavy};
+  font-weight: ${fontMedium};
   font-size: 16px;
   line-height: ${headingLineHeight};
-  ${media.medium`font-size: 17px`};
-  ${media.large`font-size: 18px`};
+  ${media.small`font-size: 18px`};
+  ${media.medium`font-size: 20px`};
+  ${media.large`font-size: 24px`};
 `
 
 export const H4 = styled.h4`
-  font-weight: ${fontBold};
+  font-weight: ${fontMedium};
   font-size: 15px;
   line-height: ${headingLineHeight};
   ${media.medium`font-size: 16px`};
@@ -78,6 +77,7 @@ injectGlobal`
     margin-bottom: 0.5em;
     color: ${greyDark};
     font-family: ${fontHeading};
+    text-transform: uppercase;
   }
 
   p {

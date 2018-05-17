@@ -56,6 +56,7 @@ const SocialLink = styled.a`
 
 const Copyright = styled.small`
   display: block;
+  font-size: ${tinyFontSize};
 
   ${media.small`
     margin-bottom: ${spacing.tiny};

@@ -45,7 +45,7 @@ export const ButtonContainer = styled.button`
   ${props => props.primary && css`
     background-color: ${primaryColor};
     color: ${white};
-    box-shadow: 0 8px 22px 0 ${rgba(primaryColor, 0.4)};
+    box-shadow: 0 8px 16px 0 ${rgba(primaryColor, 0.3)};
 
     &:hover,
     &:focus,
