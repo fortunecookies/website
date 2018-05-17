@@ -121,7 +121,7 @@ const Lantern = styled.img`
   height: 145px;
 
   ${media.medium`
-    top: 80px;
+    top: 86px;
     left: ${spacing.medium};
   `};
 

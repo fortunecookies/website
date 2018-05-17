@@ -61,7 +61,7 @@ injectGlobal`
   body {
     font-family: ${fontBody};
     line-height: ${baseLineHeight};
-    color: ${grey};
+    color: ${rgba(greyDark, 0.8)};
     font-size: ${stripUnit(regularFontSize) - 1 + 'px'};
 
     ${media.medium`

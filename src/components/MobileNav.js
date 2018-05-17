@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import { primaryColor, white } from 'styles/colors'
-import { square } from 'styles/global'
+import { square, animationTime, animationCurve } from 'styles/global'
 import { H1 } from 'styles/typography'
 import { media } from 'styles/media'
 import * as spacing from 'styles/spacing'
@@ -40,14 +40,17 @@ const Overlay = styled.div`
   height: 100%;
   background-color: ${rgba(primaryColor, 0.96)};
   z-index: 300;
-  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity ${animationTime} ${animationCurve}, visibility ${animationTime} ${animationCurve};
 
   ${media.medium`
     display: none;
   `};
 
   ${props => props.visible && css`
-    display: block;
+    opacity: 1;
+    visibility: visible;
   `}
 `
 
@@ -98,7 +101,6 @@ class MobileNav extends Component {
         <Portal>
           <Overlay visible={this.state.visible}>
             <Inner>
-              <Link exact to="/"><Label>Home</Label></Link>
               <Link exact to="/how-to-play/"><Label>How to play</Label></Link>
               <Link exact to="/faqs/"><Label>FAQs</Label></Link>
               <Link exact to="/bake-sale/"><Label>Bake Sale</Label></Link>

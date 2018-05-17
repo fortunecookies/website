@@ -89,9 +89,13 @@ export const ButtonLinkContainer = ButtonContainer.withComponent(Link).extend`
   position: relative;
 `
 
+const Label = styled(SmallCaps)`
+  position: static;
+`
+
 const Button = ({ children, primary, secondary, large, full, Container = ButtonContainer, ...rest }) => (
   <Container primary={primary} secondary={secondary} large={large} full={full} {...rest}>
-    <SmallCaps>{children}</SmallCaps>
+    <Label>{children}</Label>
   </Container>
 )
 
@@ -106,7 +110,7 @@ Button.propTypes = {
 
 export const ButtonLink = ({ children, primary, secondary, large, full, ...rest }) => (
   <ButtonLinkContainer primary={primary} secondary={secondary} large={large} full={full} {...rest}>
-    <SmallCaps>{children}</SmallCaps>
+    <Label>{children}</Label>
   </ButtonLinkContainer>
 )
 

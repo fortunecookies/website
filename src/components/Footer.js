@@ -5,7 +5,7 @@ import { stripUnit } from 'polished'
 
 import { media, mediaDown } from 'styles/media'
 import { verticalPadding } from 'styles/global'
-import { white } from 'styles/colors'
+import { white, primaryColor } from 'styles/colors'
 import { tinyFontSize, fontBold } from 'styles/typography'
 import * as spacing from 'styles/spacing'
 import Icon from 'components/Icon'
@@ -22,13 +22,34 @@ const Container = styled.div`
 
   ${media.medium`
     padding: 3rem ${spacing.xxLarge};
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
   `};
 
   ${mediaDown.medium`
     text-align: center;
+  `};
+`
+
+const Inner = styled.div`
+  position: relative;
+
+  ${media.medium`
+    padding: ${spacing.xLarge} 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: url(${require('static/images/ornaments/top-left.png')}) top left no-repeat,
+    url(${require('static/images/ornaments/top-right.png')}) top right no-repeat,
+    url(${require('static/images/ornaments/bottom-left.png')}) bottom left no-repeat,
+    url(${require('static/images/ornaments/bottom-right.png')}) bottom right no-repeat;
+    background-size: 47px 35px;
+  `};
+
+  ${media.large`
+    padding: ${spacing.xLarge} 72px;
+  `};
+
+  ${media.xLarge`
+    padding: ${spacing.xxLarge} 96px;
   `};
 `
 
@@ -89,20 +110,22 @@ const SocialLink = styled.a`
 
 const Footer = () => (
   <Container>
-    <Main>
-      <Copyright>Copyright 2018, Consensys Inc.</Copyright>
-      <FooterList>
-        <FooterLink to="/terms/">Terms of Use</FooterLink>
-        <FooterLink to="/privacy-policy/">Privacy Policy</FooterLink>
-        <FooterLink to="/about/">About</FooterLink>
-        <FooterLink to="/help/">Help & Support</FooterLink>
-      </FooterList>
-    </Main>
-    <SocialList>
-      <SocialLink href="https://www.twitter.com" target="_blank"><Icon icon="twitter" brand /></SocialLink>
-      <SocialLink href="https://www.telegram.com" target="_blank"><Icon icon="telegram" brand /></SocialLink>
-      <SocialLink href="https://www.medium.com" target="_blank"><Icon icon="medium" brand /></SocialLink>
-    </SocialList>
+    <Inner>
+      <Main>
+        <Copyright>Copyright 2018, Consensys Inc.</Copyright>
+        <FooterList>
+          <FooterLink to="/terms/">Terms of Use</FooterLink>
+          <FooterLink to="/privacy-policy/">Privacy Policy</FooterLink>
+          <FooterLink to="/about/">About</FooterLink>
+          <FooterLink to="/help/">Help & Support</FooterLink>
+        </FooterList>
+      </Main>
+      <SocialList>
+        <SocialLink href="https://www.twitter.com" target="_blank"><Icon icon="twitter" brand /></SocialLink>
+        <SocialLink href="https://www.telegram.com" target="_blank"><Icon icon="telegram" brand /></SocialLink>
+        <SocialLink href="https://www.medium.com" target="_blank"><Icon icon="medium" brand /></SocialLink>
+      </SocialList>
+    </Inner>
   </Container>
 )
 

@@ -56,6 +56,112 @@ const Inner = styled.div`
   box-shadow: 0 12px 24px 0 ${rgba(black, 0.2)};
 `
 
+const Background = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(${require('static/images/ornaments/top-left.png')}) top 20px left 20px no-repeat,
+  url(${require('static/images/ornaments/top-right.png')}) top 20px right 20px no-repeat,
+  url(${require('static/images/ornaments/bottom-left.png')}) bottom 20px left 20px no-repeat,
+  url(${require('static/images/ornaments/bottom-right.png')}) bottom 20px right 20px no-repeat;
+  background-size: 47px 35px;
+`
+
+const VerticalLine = styled.div`
+  position: absolute;
+  width: 2px;
+  height: 100px;
+  background-color: ${primaryColor};
+
+  ${media.medium`
+    height: auto;
+  `};
+
+  &:nth-child(1) {
+    top: 43px;
+    left: 20px;
+
+    ${media.medium`
+      bottom: 43px;
+    `};
+  }
+
+  &:nth-child(2) {
+    top: 43px;
+    right: 20px;
+
+    ${media.medium`
+      bottom: 43px;
+    `};
+  }
+
+  &:nth-child(3) {
+    bottom: 43px;
+    left: 20px;
+  }
+
+  &:nth-child(4) {
+    bottom: 43px;
+    right: 20px;
+  }
+`
+
+const HorizontalLine = styled.div`
+  position: absolute;
+  height: 2px;
+  background-color: #EA4150;
+
+  ${media.medium`
+    width: 100px;
+  `};
+
+  &:nth-child(1) {
+    top: 20px;
+    left: 60px;
+    right: 60px;
+
+    ${media.medium`
+      left: 60px;
+      right: auto;
+    `};
+  }
+
+  &:nth-child(2) {
+    top: 20px;
+    left: 60px;
+    right: 60px;
+
+    ${media.medium`
+      right: 60px;
+      left: auto;
+    `};
+  }
+
+  &:nth-child(3) {
+    bottom: 20px;
+    left: 60px;
+    right: 60px;
+
+    ${media.medium`
+      left: 60px;
+      right: auto;
+    `};
+  }
+
+  &:nth-child(4) {
+    bottom: 20px;
+    left: 60px;
+    right: 60px;
+
+    ${media.medium`
+      right: 60px;
+      left: auto;
+    `};
+  }
+`
+
 const Content = styled.div`
   position: relative;
   z-index: 10;
@@ -77,6 +183,8 @@ const Content = styled.div`
 `
 
 const Figure = styled.div`
+  position: relative;
+  z-index: 10;
   display: inline-block;
   width: 182px;
   margin-bottom: ${spacing.large};
@@ -109,43 +217,7 @@ const Pattern = styled.div`
   `};
 `
 
-const Ornaments = styled.div`
-  position: absolute;
-  display: flex;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: 24px;
-
-  &:before {
-    content: "";
-    width: 2px;
-    height: 100px;
-    background-color: red;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-`
-
-const Ornament = styled(InlineSVG)`
-  position: absolute;
-  width: 47px;
-  height: 35px;
-
-  &:nth-child(1) {
-    top: 0;
-    left: 0;
-  }
-
-  &:nth-child(2) {
-    top: 0;
-    right: 0;
-  }
-`
-
-const Hero = () => (
+const Overview = () => (
   <Container>
     <Wrapper>
       <Inner>
@@ -155,14 +227,24 @@ const Hero = () => (
           <Subtitle>Every FortuneCookies batch is symbolized by a charm. This charm is the image that appears in your collectibles wallet and allows you to associate your FortuneCookie with a larger set, or generation.</Subtitle>
           <ButtonLink large to="/bake-sale/" primary>View bake sale</ButtonLink>
         </Content>
-        <Ornaments>
-          <Ornament src={require(`static/images/ornaments/top-left.svg`)} raw />
-          <Ornament src={require(`static/images/ornaments/top-left.svg`)} raw />
-        </Ornaments>
+        <Background>
+          <div>
+            <VerticalLine />
+            <VerticalLine />
+            <VerticalLine />
+            <VerticalLine />
+          </div>
+          <div>
+            <HorizontalLine />
+            <HorizontalLine />
+            <HorizontalLine />
+            <HorizontalLine />
+          </div>
+        </Background>
       </Inner>
     </Wrapper>
     <Pattern />
   </Container>
 )
 
-export default Hero
+export default Overview
