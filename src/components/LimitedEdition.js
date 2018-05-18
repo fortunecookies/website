@@ -13,7 +13,7 @@ const Container = styled.div`
   position: relative;
   background-color: ${white};
   width: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
   padding-top: 0;
   padding-bottom: 3rem;
 
@@ -26,15 +26,15 @@ const Container = styled.div`
   `};
 
   ${media.medium`
-    ${verticalPadding`5rem`};
+    ${verticalPadding`7.5rem`};
   `};
 
   ${media.large`
-    ${verticalPadding`6.5rem`};
+    ${verticalPadding`10rem`};
   `};
 
   ${media.xLarge`
-    ${verticalPadding`7.5rem`};
+    ${verticalPadding`12.5rem`};
   `};
 `
 
@@ -96,20 +96,41 @@ const Content = styled.div`
 `
 
 const Figure = styled.div`
-  margin-left: -${spacing.xxLarge};
-  margin-right: -${spacing.xxLarge};
-  margin-bottom: ${spacing.xLarge};
+  width: 205%;
+  margin-left: -20%;
+  margin-top: -50%;
+  margin-bottom: -35%;
+
+  img {
+    width: 100%;
+  }
 
   ${media.small`
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: ${spacing.xxLarge};
-    max-width: 420px;
+    margin-bottom: ${spacing.large};
+    max-width: none;
+    width: auto;
   `};
 
   ${media.medium`
     flex: 1;
     max-width: 100%;
+    margin-top: -7.5rem;
+    margin-bottom: -10.5rem;
+    margin-left: -60px;
+  `};
+
+  ${media.large`
+    margin-top: -10.5rem;
+    margin-bottom: -13.5rem;
+    margin-left: -100px;
+  `};
+
+  ${media.xLarge`
+    margin-top: -16rem;
+    margin-bottom: -17rem;
+    margin-left: -120px;
   `};
 `
 
@@ -117,7 +138,7 @@ const LuckySaying = () => (
   <Container>
     <Wrapper>
       <Inner>
-        <Figure><img src={require(`static/images/illustrations/elephant.png`)} /></Figure>
+        <Figure><img src={require(`static/images/cards.png`)} /></Figure>
         <Content>
           <Title>Limited edition art</Title>
           <Subtitle>Every FortuneCookies batch also contains limited edition artwork. Buying a FortuneCookie entitles you to the rights to the associated digital art. This artwork is produced in collaboration with an artist.</Subtitle>

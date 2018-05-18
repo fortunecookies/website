@@ -20,11 +20,11 @@ const Container = styled.div`
   ${verticalPadding`3rem`};
 
   ${media.small`
-    padding: 4rem ${spacing.xLarge};
+    padding: ${spacing.xLarge};
   `};
 
   ${media.medium`
-    padding: 3rem ${spacing.xxLarge};
+    padding: ${spacing.xxLarge};
 
     &:before,
     &:after {
@@ -32,8 +32,8 @@ const Container = styled.div`
       position: absolute;
       width: 2px;
       background-color: #EA4150;
-      top: 72px;
-      bottom: 72px;
+      top: 64px;
+      bottom: 64px;
     }
 
     &:before {
