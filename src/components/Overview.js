@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { rgba } from 'polished'
-import InlineSVG from 'svg-inline-react'
 
 import * as spacing from 'styles/spacing'
 import { media } from 'styles/media'
@@ -73,38 +72,38 @@ const VerticalLine = styled.div`
   position: absolute;
   width: 2px;
   height: 100px;
-  background-color: ${primaryColor};
+  background-color: #EA4150;
 
   ${media.medium`
     height: auto;
   `};
 
   &:nth-child(1) {
-    top: 43px;
-    left: 20px;
+    top: 44px;
+    left: 19px;
 
     ${media.medium`
-      bottom: 43px;
+      bottom: 44px;
     `};
   }
 
   &:nth-child(2) {
-    top: 43px;
-    right: 20px;
+    top: 44px;
+    right: 19px;
 
     ${media.medium`
-      bottom: 43px;
+      bottom: 44px;
     `};
   }
 
   &:nth-child(3) {
-    bottom: 43px;
-    left: 20px;
+    bottom: 44px;
+    left: 19px;
   }
 
   &:nth-child(4) {
-    bottom: 43px;
-    right: 20px;
+    bottom: 44px;
+    right: 19px;
   }
 `
 

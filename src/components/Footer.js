@@ -5,7 +5,7 @@ import { stripUnit } from 'polished'
 
 import { media, mediaDown } from 'styles/media'
 import { verticalPadding } from 'styles/global'
-import { white, primaryColor } from 'styles/colors'
+import { white } from 'styles/colors'
 import { tinyFontSize, fontBold } from 'styles/typography'
 import * as spacing from 'styles/spacing'
 import Icon from 'components/Icon'
@@ -108,6 +108,26 @@ const SocialLink = styled.a`
   padding: ${spacing.small};
 `
 
+const HorizontalLine = styled.div`
+  position: absolute;
+  height: 2px;
+  background-color: #EA4150;
+  left: 44px;
+  right: 44px;
+
+  ${mediaDown.medium`
+    display: none;
+  `};
+
+  &:nth-child(1) {
+    top: 0;
+  }
+
+  &:nth-child(2) {
+    bottom: 0;
+  }
+`
+
 const Footer = () => (
   <Container>
     <Inner>
@@ -125,6 +145,10 @@ const Footer = () => (
         <SocialLink href="https://www.telegram.com" target="_blank"><Icon icon="telegram" brand /></SocialLink>
         <SocialLink href="https://www.medium.com" target="_blank"><Icon icon="medium" brand /></SocialLink>
       </SocialList>
+      <div>
+        <HorizontalLine />
+        <HorizontalLine />
+      </div>
     </Inner>
   </Container>
 )

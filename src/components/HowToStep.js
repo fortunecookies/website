@@ -1,13 +1,12 @@
-import React, { Component } from 'react'
-import { node, string } from 'prop-types'
-import styled, { css } from 'styled-components'
-import { stripUnit, rgba } from 'polished'
+import React from 'react'
+import { node } from 'prop-types'
+import styled from 'styled-components'
+import { rgba } from 'polished'
 
 import * as spacing from 'styles/spacing'
-import Icon from 'components/Icon'
-import { greyDark, white, borderColor, primaryColor } from 'styles/colors'
+import { white, primaryColor } from 'styles/colors'
 import { media } from 'styles/media'
-import { H3, fontBold } from 'styles/typography'
+import { fontBold } from 'styles/typography'
 
 const Container = styled.div`
   position: relative;

@@ -1,12 +1,12 @@
 import { media } from 'styles/media'
-import { greyDark, grey, primaryColor } from 'styles/colors'
+import { greyDark, primaryColor } from 'styles/colors'
 import { animationTime, animationCurve } from 'styles/global'
 import styled, { injectGlobal } from 'styled-components'
 import { stripUnit, rgba } from 'polished'
 
 // Font family
 export const fontBody = "Graphik, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"
-export const fontHeading = "TitlingGothicFBComp-Medium"
+export const fontHeading = "TitlingGothicFBComp-Medium, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"
 
 // Font weights
 export const fontRegular = 400
