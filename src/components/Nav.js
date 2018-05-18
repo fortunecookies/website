@@ -6,6 +6,7 @@ import { stripUnit } from 'polished'
 
 import * as spacing from 'styles/spacing'
 import { greyDark, primaryColor, white, secondaryColor } from 'styles/colors'
+import { tinyFontSize } from 'styles/typography'
 import SmallCaps from 'components/SmallCaps'
 import { media, mediaDown } from 'styles/media'
 
@@ -54,7 +55,7 @@ const Tag = styled.span`
   left: 50%;
   margin-top: -${spacing.small};
   transform: translateX(-50%);
-  font-size: 10px;
+  font-size: ${stripUnit(tinyFontSize) * 0.8 + 'px'};
   padding: ${spacing.tiny} ${stripUnit(spacing.medium) * 1.25 + 'px'};
   clip-path: polygon(100% 0%, 92% 50%, 100% 100%, 0 100%, 8% 50%, 0 0);
 `

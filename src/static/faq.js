@@ -1,7 +1,7 @@
 const faq = [
   {
     question: "What are Fortune Cookies?",
-    answer: "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras mattis consectetur purus sit amet fermentum."
+    answer: "FortunesCookies are collectible charms made with rare art and good luck on Ethereum. FortuneCookies are designed in collaboration with artists, issued as non-fungible tokens on Ethereum (ERC721), and sold in limited quantity batches to the public during official Bake Sales. Continue reading to learn more about FortuneCookies and how to buy them."
   },
   {
     question: "Where Can I Buy FortuneCookies?",

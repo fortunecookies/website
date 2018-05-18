@@ -63,7 +63,7 @@ const Number = styled.div`
   `};
 `
 
-const HowToSteps = ({ steps }) => (
+const HowToStep = ({ steps }) => (
   <div>
     {steps.map((step, i) =>
       <Step key={i}>
@@ -74,8 +74,8 @@ const HowToSteps = ({ steps }) => (
   </div>
 )
 
-HowToSteps.propTypes = {
+HowToStep.propTypes = {
   steps: array.isRequired
 }
 
-export default HowToSteps
+export default HowToStep

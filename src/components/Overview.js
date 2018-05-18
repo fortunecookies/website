@@ -49,22 +49,14 @@ const Subtitle = styled.p`
 const Inner = styled.div`
   position: relative;
   z-index: 10;
-  background-color: ${white};
   max-width: 900px;
   margin: 0 auto;
   box-shadow: 0 12px 24px 0 ${rgba(black, 0.2)};
-`
-
-const Background = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   background: url(${require('static/images/ornaments/top-left.png')}) top 20px left 20px no-repeat,
   url(${require('static/images/ornaments/top-right.png')}) top 20px right 20px no-repeat,
   url(${require('static/images/ornaments/bottom-left.png')}) bottom 20px left 20px no-repeat,
-  url(${require('static/images/ornaments/bottom-right.png')}) bottom 20px right 20px no-repeat;
+  url(${require('static/images/ornaments/bottom-right.png')}) bottom 20px right 20px no-repeat,
+  ${white};
   background-size: 47px 35px;
 `
 
@@ -226,20 +218,18 @@ const Overview = () => (
           <Subtitle>Every FortuneCookies batch is symbolized by a charm. This charm is the image that appears in your collectibles wallet and allows you to associate your FortuneCookie with a larger set, or generation.</Subtitle>
           <ButtonLink large to="/bake-sale/" primary>View bake sale</ButtonLink>
         </Content>
-        <Background>
-          <div>
-            <VerticalLine />
-            <VerticalLine />
-            <VerticalLine />
-            <VerticalLine />
-          </div>
-          <div>
-            <HorizontalLine />
-            <HorizontalLine />
-            <HorizontalLine />
-            <HorizontalLine />
-          </div>
-        </Background>
+        <div>
+          <VerticalLine />
+          <VerticalLine />
+          <VerticalLine />
+          <VerticalLine />
+        </div>
+        <div>
+          <HorizontalLine />
+          <HorizontalLine />
+          <HorizontalLine />
+          <HorizontalLine />
+        </div>
       </Inner>
     </Wrapper>
     <Pattern />

@@ -10,7 +10,10 @@ import { tinyFontSize, fontBold } from 'styles/typography'
 import * as spacing from 'styles/spacing'
 import Icon from 'components/Icon'
 
+const currentYear = new Date().getFullYear()
+
 const Container = styled.div`
+  position: relative;
   width: 100%;
   background-color: ${white};
   padding: 3rem ${spacing.large};
@@ -22,6 +25,24 @@ const Container = styled.div`
 
   ${media.medium`
     padding: 3rem ${spacing.xxLarge};
+
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      width: 2px;
+      background-color: #EA4150;
+      top: 72px;
+      bottom: 72px;
+    }
+
+    &:before {
+      left: ${stripUnit(spacing.xxLarge) - 1 + 'px'};
+    }
+
+    &:after {
+      right: ${stripUnit(spacing.xxLarge) - 1 + 'px'};
+    }
   `};
 
   ${mediaDown.medium`
@@ -42,6 +63,24 @@ const Inner = styled.div`
     url(${require('static/images/ornaments/bottom-left.png')}) bottom left no-repeat,
     url(${require('static/images/ornaments/bottom-right.png')}) bottom right no-repeat;
     background-size: 47px 35px;
+
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      height: 2px;
+      background-color: #EA4150;
+      left: 44px;
+      right: 44px;
+    }
+
+    &:before {
+      top: 0;
+    }
+
+    &:after {
+      bottom: 0;
+    }
   `};
 
   ${media.large`
@@ -108,31 +147,11 @@ const SocialLink = styled.a`
   padding: ${spacing.small};
 `
 
-const HorizontalLine = styled.div`
-  position: absolute;
-  height: 2px;
-  background-color: #EA4150;
-  left: 44px;
-  right: 44px;
-
-  ${mediaDown.medium`
-    display: none;
-  `};
-
-  &:nth-child(1) {
-    top: 0;
-  }
-
-  &:nth-child(2) {
-    bottom: 0;
-  }
-`
-
 const Footer = () => (
   <Container>
     <Inner>
       <Main>
-        <Copyright>Copyright 2018, Consensys Inc.</Copyright>
+        <Copyright>Copyright {currentYear}, Consensys Inc.</Copyright>
         <FooterList>
           <FooterLink to="/terms/">Terms of Use</FooterLink>
           <FooterLink to="/privacy-policy/">Privacy Policy</FooterLink>
@@ -141,14 +160,10 @@ const Footer = () => (
         </FooterList>
       </Main>
       <SocialList>
-        <SocialLink href="https://www.twitter.com" target="_blank"><Icon icon="twitter" brand /></SocialLink>
-        <SocialLink href="https://www.telegram.com" target="_blank"><Icon icon="telegram" brand /></SocialLink>
-        <SocialLink href="https://www.medium.com" target="_blank"><Icon icon="medium" brand /></SocialLink>
+        <SocialLink href="https://twitter.com/FTNCookies" target="_blank"><Icon icon="twitter" brand /></SocialLink>
+        <SocialLink href="https://t.me/ftncookies" target="_blank"><Icon icon="telegram" brand /></SocialLink>
+        <SocialLink href="https://medium.com/fortunecookies" target="_blank"><Icon icon="medium" brand /></SocialLink>
       </SocialList>
-      <div>
-        <HorizontalLine />
-        <HorizontalLine />
-      </div>
     </Inner>
   </Container>
 )
