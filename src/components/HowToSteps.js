@@ -1,5 +1,5 @@
 import React from 'react'
-import { array } from 'prop-types'
+import { array, node } from 'prop-types'
 import styled from 'styled-components'
 import { rgba } from 'polished'
 
@@ -63,19 +63,20 @@ const Number = styled.div`
   `};
 `
 
-const HowToStep = ({ steps }) => (
+const HowToStep = ({ children, steps }) => (
   <div>
-    {steps.map((step, i) =>
+    {children.map((step, i) =>
       <Step key={i}>
         <Number>{i + 1}</Number>
-        <Content>{step.text}</Content>
+        <Content>{step}</Content>
       </Step>
     )}
   </div>
 )
 
 HowToStep.propTypes = {
-  steps: array.isRequired
+  steps: array.isRequired,
+  children: node.isRequired
 }
 
 export default HowToStep
