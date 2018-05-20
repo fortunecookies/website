@@ -26,6 +26,8 @@ export const H1 = styled.h1`
   font-weight: ${fontMedium};
   font-size: 48px;
   line-height: ${headingLineHeight};
+  font-family: ${fontHeading};
+  text-transform: uppercase;
   ${media.small`font-size: 56px`};
   ${media.medium`font-size: 64px`};
   ${media.large`font-size: 72px`};
@@ -35,6 +37,8 @@ export const H2 = styled.h2`
   font-weight: ${fontMedium};
   font-size: 40px;
   line-height: ${headingLineHeight};
+  font-family: ${fontHeading};
+  text-transform: uppercase;
   ${media.small`font-size: 44px`};
   ${media.medium`font-size: 50px`};
   ${media.large`font-size: 56px`};
@@ -44,6 +48,8 @@ export const H3 = styled.h3`
   font-weight: ${fontMedium};
   font-size: 16px;
   line-height: ${headingLineHeight};
+  font-family: ${fontHeading};
+  text-transform: uppercase;
   ${media.small`font-size: 18px`};
   ${media.medium`font-size: 20px`};
   ${media.large`font-size: 24px`};
@@ -53,6 +59,8 @@ export const H4 = styled.h4`
   font-weight: ${fontMedium};
   font-size: 15px;
   line-height: ${headingLineHeight};
+  font-family: ${fontHeading};
+  text-transform: uppercase;
   ${media.medium`font-size: 16px`};
 `
 
@@ -76,8 +84,6 @@ injectGlobal`
   h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0.5em;
     color: ${greyDark};
-    font-family: ${fontHeading};
-    text-transform: uppercase;
   }
 
   p {

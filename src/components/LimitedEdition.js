@@ -98,7 +98,7 @@ const Content = styled.div`
 const Figure = styled.div`
   width: 205%;
   margin-left: -20%;
-  margin-top: -50%;
+  margin-top: -60%;
   margin-bottom: -35%;
 
   img {
@@ -108,7 +108,8 @@ const Figure = styled.div`
   ${media.small`
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: ${spacing.large};
+    margin-bottom: 0;
+    margin-top: -50%;
     max-width: none;
     width: auto;
   `};

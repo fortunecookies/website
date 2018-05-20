@@ -3,9 +3,9 @@ import { Switch } from 'react-router'
 import { Redirect } from 'react-router-dom'
 import { AsyncRoute } from 'layouts/asyncComponents'
 
-import MobileNav from 'components/MobileNav'
-import Footer from 'components/Footer'
 import Nav from 'components/Nav'
+import Footer from 'components/Footer'
+import MobileNav from 'components/MobileNav'
 
 const Layout = () => (
   <>

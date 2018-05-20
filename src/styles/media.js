@@ -4,8 +4,8 @@ import { css } from 'styled-components'
 export const breakpoints = {
   small: 600,
   medium: 920,
-  large: 1180,
-  xLarge: 1360
+  large: 1200,
+  xLarge: 1420
 }
 
 export const media = Object.entries(breakpoints).reduce(

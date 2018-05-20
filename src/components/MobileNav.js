@@ -64,7 +64,7 @@ const Inner = styled.div`
   justify-content: center;
 `
 
-export const Link = styled(NavLink)`
+export const Link = H1.withComponent(NavLink).extend`
   color: ${white};
   width: 100%;
   text-align: center;
@@ -74,10 +74,6 @@ export const Link = styled(NavLink)`
   &:last-child {
     margin-bottom: 0;
   }
-`
-
-export const Label = styled(H1)`
-  color: ${white};
 `
 
 @connect(null)
@@ -101,10 +97,10 @@ class MobileNav extends Component {
         <Portal>
           <Overlay visible={this.state.visible}>
             <Inner>
-              <Link exact to="/how-to-play/"><Label>How to play</Label></Link>
-              <Link exact to="/faqs/"><Label>FAQs</Label></Link>
-              <Link exact to="/bake-sale/"><Label>Bake Sale</Label></Link>
-              <Link exact to="#"><Label>Sign In</Label></Link>
+              <Link exact to="/how-to-play/">How to play</Link>
+              <Link exact to="/faqs/">FAQs</Link>
+              <Link exact to="/bake-sale/">Bake Sale</Link>
+              <Link exact to="#">Sign In</Link>
             </Inner>
           </Overlay>
         </Portal>
