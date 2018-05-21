@@ -14,6 +14,7 @@ const Layout = () => (
       <AsyncRoute exact path="/" loader={() => import('views/Home')} />
       <AsyncRoute exact path="/faqs/" loader={() => import('views/Faqs')} />
       <AsyncRoute exact path="/how-to-play/" loader={() => import('views/HowToPlay')} />
+      <AsyncRoute exact path="/bake-sale/" loader={() => import('views/BakeSale')} />
       <Redirect to="/" />
     </Switch>
     <Footer />

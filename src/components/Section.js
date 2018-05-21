@@ -38,15 +38,15 @@ const Container = styled.section`
   `};
 
   ${media.medium`
-    ${verticalPadding`4.5rem`};
+    ${verticalPadding`5rem`};
   `};
 
   ${media.large`
-    ${verticalPadding`5.5rem`};
+    ${verticalPadding`6rem`};
   `};
 
   ${media.xLarge`
-    ${verticalPadding`6.5rem`};
+    ${verticalPadding`7rem`};
   `};
 `
 
