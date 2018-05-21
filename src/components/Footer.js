@@ -9,6 +9,7 @@ import { white } from 'styles/colors'
 import { tinyFontSize, fontBold } from 'styles/typography'
 import * as spacing from 'styles/spacing'
 import Icon from 'components/Icon'
+import Wrapper from 'components/Wrapper'
 
 const currentYear = new Date().getFullYear()
 
@@ -16,15 +17,23 @@ const Container = styled.div`
   position: relative;
   width: 100%;
   background-color: ${white};
-  padding: 3rem ${spacing.large};
+  padding: 3rem 0;
   ${verticalPadding`3rem`};
 
   ${media.small`
-    padding: ${spacing.xLarge};
+    padding: ${spacing.xLarge} 0;
   `};
 
+  ${mediaDown.medium`
+    text-align: center;
+  `};
+`
+
+const Wrap = styled.div`
+  position: relative;
+
   ${media.medium`
-    padding: ${spacing.xxLarge};
+    padding: ${spacing.xxLarge} 0;
 
     &:before,
     &:after {
@@ -37,16 +46,12 @@ const Container = styled.div`
     }
 
     &:before {
-      left: ${stripUnit(spacing.xxLarge) - 1 + 'px'};
+      left: -1px;
     }
 
     &:after {
-      right: ${stripUnit(spacing.xxLarge) - 1 + 'px'};
+      right: -1px;
     }
-  `};
-
-  ${mediaDown.medium`
-    text-align: center;
   `};
 `
 
@@ -149,22 +154,26 @@ const SocialLink = styled.a`
 
 const Footer = () => (
   <Container>
-    <Inner>
-      <Main>
-        <Copyright>Copyright {currentYear}, Consensys Inc.</Copyright>
-        <FooterList>
-          <FooterLink to="/terms/">Terms of Use</FooterLink>
-          <FooterLink to="/privacy-policy/">Privacy Policy</FooterLink>
-          <FooterLink to="/about/">About</FooterLink>
-          <FooterLink to="/help/">Help & Support</FooterLink>
-        </FooterList>
-      </Main>
-      <SocialList>
-        <SocialLink href="https://twitter.com/FTNCookies" target="_blank"><Icon icon="twitter" brand /></SocialLink>
-        <SocialLink href="https://t.me/ftncookies" target="_blank"><Icon icon="telegram" brand /></SocialLink>
-        <SocialLink href="https://medium.com/fortunecookies" target="_blank"><Icon icon="medium" brand /></SocialLink>
-      </SocialList>
-    </Inner>
+    <Wrapper>
+      <Wrap>
+        <Inner>
+          <Main>
+            <Copyright>Copyright {currentYear}, Consensys Inc.</Copyright>
+            <FooterList>
+              <FooterLink to="/terms/">Terms of Use</FooterLink>
+              <FooterLink to="/privacy-policy/">Privacy Policy</FooterLink>
+              <FooterLink to="/about/">About</FooterLink>
+              <FooterLink to="/help/">Help & Support</FooterLink>
+            </FooterList>
+          </Main>
+          <SocialList>
+            <SocialLink href="https://twitter.com/FTNCookies" target="_blank"><Icon icon="twitter" brand /></SocialLink>
+            <SocialLink href="https://t.me/ftncookies" target="_blank"><Icon icon="telegram" brand /></SocialLink>
+            <SocialLink href="https://medium.com/fortunecookies" target="_blank"><Icon icon="medium" brand /></SocialLink>
+          </SocialList>
+        </Inner>
+      </Wrap>
+    </Wrapper>
   </Container>
 )
 
