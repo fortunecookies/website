@@ -10,6 +10,10 @@ import { media } from 'styles/media'
 
 const Container = styled.div`
   position: relative;
+`
+
+const Bar = styled.div`
+  position: relative;
   width: 100%;
   height: ${stripUnit(spacing.small) * 1.5 + 'px'};
   border-radius: 6px;
@@ -36,7 +40,9 @@ const Fill = styled.div`
 
 const ProgressBar = ({ progress, ...rest }) => (
   <Container>
-    <Fill style={{ 'width': progress + '%' }} />
+    <Bar>
+      <Fill style={{ 'width': progress + '%' }} />
+    </Bar>
   </Container>
 )
 

@@ -91,11 +91,18 @@ export const ButtonLinkContainer = ButtonContainer.withComponent(Link).extend`
 
 const Label = styled(SmallCaps)`
   position: static;
+  transition: opacity ${animationTime} ${animationCurve};
+
+  ${props =>
+    props.isLoading &&
+    css`
+      opacity: 0;
+    `};
 `
 
-const Button = ({ children, primary, secondary, large, full, Container = ButtonContainer, ...rest }) => (
-  <Container primary={primary} secondary={secondary} large={large} full={full} {...rest}>
-    <Label>{children}</Label>
+const Button = ({ children, primary, secondary, large, full, isLoading, Container = ButtonContainer, ...rest }) => (
+  <Container primary={primary} secondary={secondary} isLoading={isLoading} large={large} full={full} {...rest}>
+    <Label isLoading={isLoading}>{children}</Label>
   </Container>
 )
 
@@ -104,13 +111,14 @@ Button.propTypes = {
   primary: bool,
   secondary: bool,
   large: bool,
+  isLoading: bool,
   full: bool,
   Container: func
 }
 
-export const ButtonLink = ({ children, primary, secondary, large, full, ...rest }) => (
-  <ButtonLinkContainer primary={primary} secondary={secondary} large={large} full={full} {...rest}>
-    <Label>{children}</Label>
+export const ButtonLink = ({ children, primary, secondary, large, full, isLoading, ...rest }) => (
+  <ButtonLinkContainer primary={primary} secondary={secondary} isLoading={isLoading} large={large} full={full} {...rest}>
+    <Label isLoading={isLoading}>{children}</Label>
   </ButtonLinkContainer>
 )
 
@@ -119,6 +127,7 @@ ButtonLink.propTypes = {
   primary: bool,
   secondary: bool,
   large: bool,
+  isLoading: bool,
   full: bool
 }
 

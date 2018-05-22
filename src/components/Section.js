@@ -7,7 +7,7 @@ import { media } from 'styles/media'
 import { offWhite, borderColor } from 'styles/colors'
 
 const Container = styled.section`
-  ${verticalPadding`2.5rem`};
+  ${verticalPadding`3rem`};
 
   ${props => props.alt && css`
     background-color: ${offWhite};
@@ -34,7 +34,7 @@ const Container = styled.section`
   `}
 
   ${media.small`
-    ${verticalPadding`3rem`};
+    ${verticalPadding`4rem`};
   `};
 
   ${media.medium`

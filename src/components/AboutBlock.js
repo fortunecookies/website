@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { string, array } from 'prop-types'
+import { string, node } from 'prop-types'
+import { stripUnit } from 'polished'
 
 import * as spacing from 'styles/spacing'
 import { media, mediaDown } from 'styles/media'
@@ -19,7 +20,11 @@ const Container = styled.div`
 const Lead = styled(SmallCaps)`
   display: block;
   color: ${primaryColor};
-  margin-bottom: ${spacing.medium};
+  margin-bottom: ${stripUnit(spacing.small) * 1.5 + 'px'};
+
+  ${media.medium`
+    margin-bottom: ${spacing.medium};
+  `};
 `
 
 const Title = styled(H2)`
@@ -40,18 +45,22 @@ const Item = styled(SmallCaps)`
   font-size: ${tinyFontSize};
   display: block;
 
+  a {
+    display: block;
+  }
+
   & + & {
     margin-top: ${spacing.small};
   }
 `
 
-const AboutBlock = ({ lead, title, description, meta }) => (
+const AboutBlock = ({ lead, title, description, children }) => (
   <Container>
     <Lead>{lead}</Lead>
     <Title>{title}</Title>
     <Description>{description}</Description>
-    {meta.map((item, i) =>
-      <Item key={i}>{item.text}</Item>
+    {children.map((item, i) =>
+      <Item key={i}>{item}</Item>
     )}
   </Container>
 )
@@ -60,7 +69,7 @@ AboutBlock.propTypes = {
   lead: string.isRequired,
   title: string.isRequired,
   description: string.isRequired,
-  meta: array
+  children: node
 }
 
 export default AboutBlock
