@@ -14,6 +14,8 @@ const BakeSale = () => (
         <SingleProduct
           lead="Batch ID No. 1"
           title="Genesis"
+          price={2.99}
+          averagePrice={0.43}
           figure={<img src={require(`static/images/charm.png`)} />}
         />
       </Wrapper>
