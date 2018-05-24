@@ -63,7 +63,7 @@ const Number = styled.div`
   `};
 `
 
-const HowToStep = ({ children, steps }) => (
+const HowToStep = ({ children }) => (
   <div>
     {children.map((step, i) =>
       <Step key={i}>
@@ -75,7 +75,7 @@ const HowToStep = ({ children, steps }) => (
 )
 
 HowToStep.propTypes = {
-  steps: array.isRequired,
+
   children: node.isRequired
 }
 

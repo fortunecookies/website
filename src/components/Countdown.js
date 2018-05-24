@@ -18,12 +18,8 @@ const Inner = styled.div`
 
 const Title = styled(SmallCaps)`
   color: ${primaryColor};
-  margin-bottom: ${spacing.small};
+  margin-bottom: ${stripUnit(spacing.small) * 1.5 + 'px'};
   display: block;
-
-  ${media.medium`
-    margin-bottom: ${stripUnit(spacing.small) * 1.5 + 'px'};
-  `};
 `
 
 const Label = styled(SmallCaps)`

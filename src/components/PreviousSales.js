@@ -1,10 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-import { stripUnit } from 'polished'
+import { array } from 'prop-types'
+import { rgba } from 'polished'
 
 import * as spacing from 'styles/spacing'
-import { media } from 'styles/media'
-import { primaryColor, white } from 'styles/colors'
+import { media, mediaDown } from 'styles/media'
+import { primaryColor, black } from 'styles/colors'
+import { H3 } from 'styles/typography'
 import Wrapper from 'components/Wrapper'
 import SmallCaps from 'components/SmallCaps'
 import OrnamentBlock from 'components/OrnamentBlock'
@@ -39,22 +41,22 @@ const Title = styled(SmallCaps)`
 `
 
 const Content = styled.div`
-  padding: ${spacing.large};
+  padding: ${spacing.large} ${spacing.xxLarge} 56px;
 
   ${media.small`
-    padding: ${spacing.xLarge};
+    padding: ${spacing.xLarge} ${spacing.xxxLarge} 64px;
   `};
 
   ${media.medium`
-    padding: ${spacing.xxLarge};
+    padding: ${spacing.xxLarge} 56px;
   `};
 
   ${media.large`
-    padding: 64px 56px 80px;
+    padding: 64px 64px 80px;
   `};
 
   ${media.xLarge`
-    padding: 72px 80px 80px;
+    padding: 72px 80px 96px;
   `};
 `
 
@@ -75,14 +77,70 @@ const Pattern = styled.div`
   `};
 `
 
-const PreviousSales = () => (
+const List = styled.div`
+  position: relative;
+
+  ${media.medium`
+    display: flex;
+    flex-wrap: wrap;
+  `};
+`
+
+const Sale = styled.div`
+  display: block;
+  width: 100%;
+
+  ${media.medium`
+    flex-basis: 33.333%
+  `};
+
+  & + & {
+    ${mediaDown.medium`
+      margin-top: ${spacing.small};
+    `};
+  }
+`
+
+const SaleFigure = styled.img`
+  width: 160px;
+  margin: 0 auto ${spacing.large};
+  filter: drop-shadow(0 22px 26px ${rgba(black, 0.25)});
+
+  ${media.small`
+    width: 200px;
+  `};
+
+  ${media.medium`
+    width: 160px;
+  `};
+`
+
+const SaleName = styled(H3)`
+  margin-bottom: ${spacing.tiny};
+`
+
+const SalePrice = styled.strong`
+  color: ${primaryColor};
+  display: inline-block;
+  font-size: 1.25em;
+`
+
+const PreviousSales = ({ sales }) => (
   <Container>
     <Wrapper>
       <Inner>
         <OrnamentBlock>
           <Title>Previous Bake Sales</Title>
           <Content>
-            <p>Previous sales go here</p>
+            <List>
+              {sales.map((sale, i) =>
+                <Sale key={i}>
+                  <SaleFigure src={require(`static/images/${sale.figure}.png`)} />
+                  <SaleName>{sale.name}</SaleName>
+                  <SalePrice>{sale.price}</SalePrice>
+                </Sale>
+              )}
+            </List>
           </Content>
         </OrnamentBlock>
       </Inner>
@@ -90,5 +148,9 @@ const PreviousSales = () => (
     <Pattern />
   </Container>
 )
+
+PreviousSales.propTypes = {
+  sales: array.isRequired
+}
 
 export default PreviousSales

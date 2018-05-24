@@ -46,6 +46,17 @@ export const H2 = styled.h2`
 
 export const H3 = styled.h3`
   font-weight: ${fontMedium};
+  font-size: 24px;
+  line-height: ${headingLineHeight};
+  font-family: ${fontHeading};
+  text-transform: uppercase;
+  ${media.small`font-size: 27px`};
+  ${media.medium`font-size: 30px`};
+  ${media.large`font-size: 32px`};
+`
+
+export const H4 = styled.h4`
+  font-weight: ${fontMedium};
   font-size: 16px;
   line-height: ${headingLineHeight};
   font-family: ${fontHeading};
@@ -53,15 +64,6 @@ export const H3 = styled.h3`
   ${media.small`font-size: 18px`};
   ${media.medium`font-size: 20px`};
   ${media.large`font-size: 24px`};
-`
-
-export const H4 = styled.h4`
-  font-weight: ${fontMedium};
-  font-size: 15px;
-  line-height: ${headingLineHeight};
-  font-family: ${fontHeading};
-  text-transform: uppercase;
-  ${media.medium`font-size: 16px`};
 `
 
 injectGlobal`

@@ -47,7 +47,25 @@ const BakeSale = () => (
         </GridRow>
       </Wrapper>
     </Section>
-    <PreviousSales />
+    <PreviousSales
+      sales={[
+        {
+          figure: 'gem',
+          name: 'Dimension',
+          price: 2.97
+        },
+        {
+          figure: 'egg',
+          name: 'Fortuna',
+          price: 2.97
+        },
+        {
+          figure: 'cookie',
+          name: "Genesis",
+          price: 2.97
+        }
+      ]}
+    />
   </>
 )
 

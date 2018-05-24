@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 
-import { H3 } from 'styles/typography'
+import { H4 } from 'styles/typography'
 import Header from 'components/Header'
 import Wrapper from 'components/Wrapper'
 import Section, { SectionBlock } from 'components/Section'
@@ -18,7 +18,7 @@ const HowToPlay = () => (
     <Section flushTop center>
       <Wrapper narrow>
         <SectionBlock>
-          <H3>Rules of the Bake Sale</H3>
+          <H4>Rules of the Bake Sale</H4>
         </SectionBlock>
         <SectionBlock>
           <HowToSteps>
