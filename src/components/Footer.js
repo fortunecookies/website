@@ -9,7 +9,6 @@ import { white } from 'styles/colors'
 import { tinyFontSize, fontBold } from 'styles/typography'
 import * as spacing from 'styles/spacing'
 import Icon from 'components/Icon'
-import Wrapper from 'components/Wrapper'
 
 const currentYear = new Date().getFullYear()
 
@@ -17,12 +16,17 @@ const Container = styled.div`
   position: relative;
   width: 100%;
   background-color: ${white};
-  padding: 3rem 0;
+  padding: 3rem ${spacing.large};
   ${verticalPadding`3rem`};
 
   ${media.small`
-    padding: ${spacing.xLarge} 0;
+    padding: ${spacing.xLarge};
   `};
+
+  ${media.medium`
+    padding-left: 48px;
+    padding-right: 48px;
+  `}
 
   ${mediaDown.medium`
     text-align: center;
@@ -31,6 +35,8 @@ const Container = styled.div`
 
 const Wrap = styled.div`
   position: relative;
+  max-width: 1300px;
+  margin: 0 auto;
 
   ${media.medium`
     padding: ${spacing.xxLarge} 0;
@@ -154,26 +160,24 @@ const SocialLink = styled.a`
 
 const Footer = () => (
   <Container>
-    <Wrapper>
-      <Wrap>
-        <Inner>
-          <Main>
-            <Copyright>Copyright {currentYear}, Consensys Inc.</Copyright>
-            <FooterList>
-              <FooterLink to="/terms/">Terms of Use</FooterLink>
-              <FooterLink to="/privacy-policy/">Privacy Policy</FooterLink>
-              <FooterLink to="/about/">About</FooterLink>
-              <FooterLink to="/help/">Help & Support</FooterLink>
-            </FooterList>
-          </Main>
-          <SocialList>
-            <SocialLink href="https://twitter.com/FTNCookies" target="_blank"><Icon icon="twitter" brand /></SocialLink>
-            <SocialLink href="https://t.me/ftncookies" target="_blank"><Icon icon="telegram" brand /></SocialLink>
-            <SocialLink href="https://medium.com/fortunecookies" target="_blank"><Icon icon="medium" brand /></SocialLink>
-          </SocialList>
-        </Inner>
-      </Wrap>
-    </Wrapper>
+    <Wrap>
+      <Inner>
+        <Main>
+          <Copyright>Copyright {currentYear}, Consensys Inc.</Copyright>
+          <FooterList>
+            <FooterLink to="/terms/">Terms of Use</FooterLink>
+            <FooterLink to="/privacy-policy/">Privacy Policy</FooterLink>
+            <FooterLink to="/about/">About</FooterLink>
+            <FooterLink to="/help/">Help & Support</FooterLink>
+          </FooterList>
+        </Main>
+        <SocialList>
+          <SocialLink href="https://twitter.com/FTNCookies" target="_blank"><Icon icon="twitter" brand /></SocialLink>
+          <SocialLink href="https://t.me/ftncookies" target="_blank"><Icon icon="telegram" brand /></SocialLink>
+          <SocialLink href="https://medium.com/fortunecookies" target="_blank"><Icon icon="medium" brand /></SocialLink>
+        </SocialList>
+      </Inner>
+    </Wrap>
   </Container>
 )
 

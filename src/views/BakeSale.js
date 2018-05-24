@@ -1,14 +1,15 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import Wrapper from 'components/Wrapper'
 import AboutBlock from 'components/AboutBlock'
+import PreviousSales from 'components/PreviousSales'
 import SingleProduct from 'components/SingleProduct'
 import Section from 'components/Section'
 import GridRow from 'components/grid/GridRow'
 import GridItem from 'components/grid/GridItem'
 
 const BakeSale = () => (
-  <Fragment>
+  <>
     <Section>
       <Wrapper>
         <SingleProduct
@@ -46,7 +47,8 @@ const BakeSale = () => (
         </GridRow>
       </Wrapper>
     </Section>
-  </Fragment>
+    <PreviousSales />
+  </>
 )
 
 export default BakeSale

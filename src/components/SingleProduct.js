@@ -6,7 +6,7 @@ import { stripUnit } from 'polished'
 import * as spacing from 'styles/spacing'
 import { media, mediaDown } from 'styles/media'
 import { H2 } from 'styles/typography'
-import { primaryColor } from 'styles/colors'
+import { primaryColor, borderColor } from 'styles/colors'
 import ProgressBar from 'components/ProgressBar'
 import SmallCaps from 'components/SmallCaps'
 import Countdown from 'components/Countdown'
@@ -14,15 +14,22 @@ import Button from 'components/button/Button'
 
 const Container = styled.div`
   position: relative;
+  padding-bottom: 2.5rem;
+
+  ${media.small`
+    padding-bottom: 3.5rem;
+  `};
 
   ${mediaDown.medium`
     text-align: center;
+    border-bottom: 1px solid ${borderColor};
   `};
 
   ${media.medium`
     display: flex;
     align-items: center;
     margin-top: -${spacing.large};
+    padding-bottom: 0;
   `};
 
   ${media.large`
