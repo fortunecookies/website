@@ -14,7 +14,7 @@ export const animationCurve = 'cubic-bezier(0.785, 0.135, 0.150, 0.860)'
 export const borderRadius = '5px'
 
 // Button
-export const buttonHeightMobile = '56px'
+export const buttonHeightMobile = '52px'
 export const buttonHeightDesktop = '64px'
 
 // Inputs

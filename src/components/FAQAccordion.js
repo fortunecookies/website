@@ -48,6 +48,11 @@ const QuestionTitle = styled(H4)`
   margin-bottom: 0;
   color: ${greyDark};
   flex-grow: 1;
+  padding-right: ${spacing.medium};
+
+  ${media.medium`
+    padding-right: ${spacing.large};
+  `};
 `
 
 const Content = styled.main`

@@ -16,13 +16,14 @@ export const ButtonContainer = styled.button`
   justify-content: center;
   height: ${buttonHeightMobile};
   border-radius: ${borderRadius};
-  padding: 0 ${spacing.large};
+  padding: 0 ${stripUnit(spacing.medium) * 1.25 + 'px'};
   cursor: pointer;
   text-align: center;
   transition: background-color ${animationTime} ${animationCurve}, border-color ${animationTime} ${animationCurve}, transform ${animationTime} ${animationCurve}, opacity ${animationTime} ${animationCurve}, color ${animationTime} ${animationCurve};
 
   ${props => props.large && css`
     height: ${stripUnit(buttonHeightMobile) * 1.05 + 'px'};
+    min-width: 160px;
   `}
 
   ${media.small`
