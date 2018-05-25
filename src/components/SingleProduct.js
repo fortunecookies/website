@@ -170,6 +170,15 @@ const BuyWrap = styled.div`
   `};
 `
 
+const Status = styled.div`
+  max-width: 450px;
+
+  ${mediaDown.medium`
+    margin-left: auto;
+    margin-right: auto;
+  `};
+`
+
 const SingleProduct = ({ lead, title, figure, price, averagePrice }) => (
   <Container>
     <Figure>{figure}</Figure>
@@ -183,6 +192,7 @@ const SingleProduct = ({ lead, title, figure, price, averagePrice }) => (
         </PriceWrap>
         <ProgressBar progress={40} />
       </ProgressWrap>
+      <Status>{/* <Notice type="positive" text="Purchased!" /> */}</Status>
       <BuyWrap>
         <BuyButton primary large isLoading>
           Buy Now

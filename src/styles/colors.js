@@ -15,10 +15,7 @@ export const offWhite = '#f2f2f2'
 
 export const white = '#fff'
 export const black = '#000'
-export const yellow = '#FFC500'
 export const green = '#15CD96'
-export const indigo = '#4471F0'
-export const purple = '#5954EA'
 
 // Set colors
 
