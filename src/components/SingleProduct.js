@@ -164,7 +164,6 @@ const BuyButton = styled(Button)`
 `
 
 const BuyWrap = styled.div`
-
   ${media.medium`
     display: flex;
     align-items: center;
@@ -185,7 +184,9 @@ const SingleProduct = ({ lead, title, figure, price, averagePrice }) => (
         <ProgressBar progress={40} />
       </ProgressWrap>
       <BuyWrap>
-        <BuyButton primary large>Buy Now</BuyButton>
+        <BuyButton primary large isLoading>
+          Buy Now
+        </BuyButton>
         <Countdown />
       </BuyWrap>
     </Content>
