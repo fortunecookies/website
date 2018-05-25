@@ -18,8 +18,8 @@ export const buttonHeightMobile = '52px'
 export const buttonHeightDesktop = '64px'
 
 // Inputs
-export const inputHeight = '46px'
-export const inputHeightSmall = '38px'
+export const inputHeightMobile = '52px'
+export const inputHeightDesktop = '64px'
 
 // Vertical padding
 export const verticalPadding = padding => css`

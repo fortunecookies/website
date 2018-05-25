@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import { string, object, bool, node } from 'prop-types'
 
-import { white, primaryColor, grey, red, greyLight, offWhite, borderColor } from 'styles/colors'
-import { animationTime, animationCurve, borderRadius, inputHeight, inputHeightSmall } from 'styles/global'
-import { tinyFontSize, smallFontSize } from 'styles/typography'
-import Icon from 'components/Icon'
+import { white, red, greyLight, greyLightest, offWhite, greyDark } from 'styles/colors'
+import { animationTime, animationCurve, borderRadius, inputHeightMobile, inputHeightDesktop } from 'styles/global'
+import { tinyFontSize } from 'styles/typography'
+import { media } from 'styles/media'
 import Label from 'components/Label'
 import * as spacing from 'styles/spacing'
 import { rgba, placeholder, stripUnit } from 'polished'
@@ -15,50 +15,34 @@ const Container = styled.div`
   width: 100%;
 `
 
-const Wrap = styled.div`
+const Wrapper = styled.div`
   position: relative;
-
-  ${props =>
-    props.narrow &&
-    `
-    max-width: 160px;
-  `};
 `
 
 const Field = styled.input`
-  height: ${props => (props.small ? inputHeightSmall : inputHeight)};
+  height: ${inputHeightMobile};
   border-radius: ${borderRadius};
-  background-color: ${white};
+  background-color: ${greyLightest};
   width: 100%;
   resize: none;
-  color: ${grey};
+  color: ${greyDark};
   vertical-align: top;
   outline: 0;
   padding: 0 ${spacing.medium};
-  box-shadow: inset 0 0 0 1px ${borderColor};
-  transition: box-shadow ${animationTime} ${animationCurve};
+  transition: box-shadow ${animationTime} ${animationCurve}, background-color ${animationTime} ${animationCurve};
+  ${placeholder({ color: rgba(greyDark, 0.5) })};
+
+  ${media.medium`
+    height: ${inputHeightDesktop};
+  `};
 
   ${props =>
-    props.small &&
+    props.error &&
     `
-    padding: 0 ${stripUnit(spacing.small) * 1.25 + 'px'};
-    font-size: ${smallFontSize};
-  `} ${props =>
-      props.icon &&
-      `
-    padding-left: 46px;
-  `} ${props =>
-      props.addon &&
-      `
-    padding-right: ${spacing.xxxLarge};
-  `} ${props =>
-      props.error &&
-      `
-    box-shadow: inset 0 0 0 1px ${red}, 0 0 0 1px ${red};
-  `} ${placeholder({ color: rgba(grey, 0.3) })};
-
-  &:focus {
-    box-shadow: inset 0 0 0 1px ${primaryColor}, 0 0 0 1px ${primaryColor};
+    box-shadow: inset 0 0 0 1px ${red};
+  `} &:focus {
+    box-shadow: inset 0 0 0 1px ${greyDark};
+    background-color: ${white};
   }
 
   &[disabled] {
@@ -76,29 +60,6 @@ const Textarea = Field.withComponent('textarea').extend`
   resize: vertical;
 `
 
-const FieldIcon = styled(Icon)`
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: ${stripUnit(spacing.medium) * 0.75 + 'px'};
-  pointer-events: none;
-  color: ${greyLight};
-  transition: color ${animationTime} ${animationCurve};
-
-  ${Field}:focus + & {
-    color: ${primaryColor};
-  }
-`
-
-const Addon = styled.div`
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: ${spacing.medium};
-  color: ${primaryColor};
-  font-size: ${smallFontSize};
-`
-
 const ErrorMessage = styled.small`
   color: ${red};
   display: block;
@@ -106,15 +67,13 @@ const ErrorMessage = styled.small`
   font-size: ${tinyFontSize};
 `
 
-const Input = ({ label, narrow, input, addon, icon, textarea, meta = {}, ...rest }) => (
+const Input = ({ label, input, icon, textarea, meta = {}, ...rest }) => (
   <Container>
     {label && <Label>{label}</Label>}
-    <Wrap narrow={narrow}>
-      {!textarea && <Field icon={icon} addon={addon} error={meta.error && meta.touched} {...input} {...rest} />}
+    <Wrapper>
+      {!textarea && <Field icon={icon} error={meta.error && meta.touched} {...input} {...rest} />}
       {textarea && <Textarea error={meta.error && meta.touched} {...input} {...rest} />}
-      {icon && <FieldIcon icon={icon} />}
-      {addon && <Addon>{addon}</Addon>}
-    </Wrap>
+    </Wrapper>
     {meta && meta.touched && meta.error && <ErrorMessage>{meta.error}</ErrorMessage>}
   </Container>
 )

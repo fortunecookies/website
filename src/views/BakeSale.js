@@ -5,6 +5,7 @@ import AboutBlock from 'components/AboutBlock'
 import PreviousSales from 'components/PreviousSales'
 import SingleProduct from 'components/SingleProduct'
 import Section from 'components/Section'
+import SignInModal from 'components/Modal/SignInModal'
 import GridRow from 'components/grid/GridRow'
 import GridItem from 'components/grid/GridItem'
 
@@ -66,6 +67,7 @@ const BakeSale = () => (
         }
       ]}
     />
+    <SignInModal />
   </>
 )
 
