@@ -2,7 +2,6 @@ import { css } from 'styled-components'
 import { media } from 'styles/media'
 
 export default css`
-
   .u-1-1 {
     width: 100% !important;
   }
@@ -86,5 +85,4 @@ export default css`
     }
 
   `};
-
 `

@@ -2,7 +2,6 @@ import { css } from 'styled-components'
 import { media, mediaDown } from 'styles/media'
 
 export default css`
-
   .u-hide-small-down {
     ${mediaDown.small`
       display: none !important;

@@ -62,9 +62,7 @@ const Header = ({ title, subtitle }) => (
   <Container>
     <Wrapper narrow>
       <Title>{title}</Title>
-      {subtitle && (
-        <Subtitle>{subtitle}</Subtitle>
-      )}
+      {subtitle && <Subtitle>{subtitle}</Subtitle>}
     </Wrapper>
   </Container>
 )

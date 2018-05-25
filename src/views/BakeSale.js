@@ -61,7 +61,7 @@ const BakeSale = () => (
         },
         {
           figure: 'cookie',
-          name: "Genesis",
+          name: 'Genesis',
           price: 2.97
         }
       ]}

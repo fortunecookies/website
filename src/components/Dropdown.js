@@ -12,10 +12,12 @@ import Label from 'components/Label'
 const Container = styled.div`
   display: inline-block;
 
-  ${props => props.full && css`
-    display: block;
-    width: 100%;
-  `}
+  ${props =>
+    props.full &&
+    css`
+      display: block;
+      width: 100%;
+    `};
 `
 
 const Wrap = styled.div`
@@ -27,7 +29,7 @@ const Select = styled.select`
   height: ${inputHeight};
   border-radius: ${borderRadius};
   background-color: ${white};
-  background-image: linear-gradient(180deg, ${rgba(white, 0.5)} 0%, ${rgba(offWhite, 0.50)} 100%);
+  background-image: linear-gradient(180deg, ${rgba(white, 0.5)} 0%, ${rgba(offWhite, 0.5)} 100%);
   border: 1px solid ${borderColor};
   width: 100%;
   resize: none;

@@ -48,10 +48,12 @@ const Overlay = styled.div`
     display: none;
   `};
 
-  ${props => props.visible && css`
-    opacity: 1;
-    visibility: visible;
-  `}
+  ${props =>
+    props.visible &&
+    css`
+      opacity: 1;
+      visibility: visible;
+    `};
 `
 
 const Inner = styled.div`
@@ -80,13 +82,13 @@ export const Link = H1.withComponent(NavLink).extend`
 class MobileNav extends Component {
   state = {
     visible: false
-  }
+  };
 
   toggle = () => {
     this.setState({
       visible: !this.state.visible
     })
-  }
+  };
 
   render() {
     return (
@@ -97,10 +99,18 @@ class MobileNav extends Component {
         <Portal>
           <Overlay visible={this.state.visible}>
             <Inner>
-              <Link exact to="/how-to-play/">How to play</Link>
-              <Link exact to="/faqs/">FAQs</Link>
-              <Link exact to="/bake-sale/">Bake Sale</Link>
-              <Link exact to="#">Sign In</Link>
+              <Link exact to="/how-to-play/">
+                How to play
+              </Link>
+              <Link exact to="/faqs/">
+                FAQs
+              </Link>
+              <Link exact to="/bake-sale/">
+                Bake Sale
+              </Link>
+              <Link exact to="#">
+                Sign In
+              </Link>
             </Inner>
           </Overlay>
         </Portal>

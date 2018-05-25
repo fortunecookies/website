@@ -18,9 +18,11 @@ const Container = styled.div`
 const Wrap = styled.div`
   position: relative;
 
-  ${props => props.narrow && `
+  ${props =>
+    props.narrow &&
+    `
     max-width: 160px;
-  `}
+  `};
 `
 
 const Field = styled.input`
@@ -36,24 +38,24 @@ const Field = styled.input`
   box-shadow: inset 0 0 0 1px ${borderColor};
   transition: box-shadow ${animationTime} ${animationCurve};
 
-  ${props => props.small && `
+  ${props =>
+    props.small &&
+    `
     padding: 0 ${stripUnit(spacing.small) * 1.25 + 'px'};
     font-size: ${smallFontSize};
-  `}
-
-  ${props => props.icon && `
+  `} ${props =>
+      props.icon &&
+      `
     padding-left: 46px;
-  `}
-
-  ${props => props.addon && `
+  `} ${props =>
+      props.addon &&
+      `
     padding-right: ${spacing.xxxLarge};
-  `}
-
-  ${props => props.error && `
+  `} ${props =>
+      props.error &&
+      `
     box-shadow: inset 0 0 0 1px ${red}, 0 0 0 1px ${red};
-  `}
-
-  ${placeholder({ color: rgba(grey, 0.3) })};
+  `} ${placeholder({ color: rgba(grey, 0.3) })};
 
   &:focus {
     box-shadow: inset 0 0 0 1px ${primaryColor}, 0 0 0 1px ${primaryColor};
@@ -108,22 +110,12 @@ const Input = ({ label, narrow, input, addon, icon, textarea, meta = {}, ...rest
   <Container>
     {label && <Label>{label}</Label>}
     <Wrap narrow={narrow}>
-      {!textarea &&
-        <Field icon={icon} addon={addon} error={meta.error && meta.touched} {...input} {...rest} />
-      }
-      {textarea &&
-        <Textarea error={meta.error && meta.touched} {...input} {...rest} />
-      }
-      {icon &&
-        <FieldIcon icon={icon} />
-      }
-      {addon &&
-        <Addon>{addon}</Addon>
-      }
+      {!textarea && <Field icon={icon} addon={addon} error={meta.error && meta.touched} {...input} {...rest} />}
+      {textarea && <Textarea error={meta.error && meta.touched} {...input} {...rest} />}
+      {icon && <FieldIcon icon={icon} />}
+      {addon && <Addon>{addon}</Addon>}
     </Wrap>
-    {meta && meta.touched && meta.error &&
-      <ErrorMessage>{meta.error}</ErrorMessage>
-    }
+    {meta && meta.touched && meta.error && <ErrorMessage>{meta.error}</ErrorMessage>}
   </Container>
 )
 

@@ -9,7 +9,7 @@ import { rgba, stripUnit } from 'polished'
 
 const Container = styled.div`
   display: inline-block;
-  background-color: ${rgba(red, 0.10)};
+  background-color: ${rgba(red, 0.1)};
   color: ${red};
   border-radius: ${borderRadius};
   padding: ${stripUnit(spacing.small) * 1.5 + 'px'} ${spacing.medium};

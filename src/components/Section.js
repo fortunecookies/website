@@ -9,31 +9,31 @@ import { offWhite, borderColor } from 'styles/colors'
 const Container = styled.section`
   ${verticalPadding`3rem`};
 
-  ${props => props.alt && css`
-    background-color: ${offWhite};
-  `}
-
-  ${props => props.center && css`
-    text-align: center;
-  `}
-
-  ${props => props.flush && css`
-    padding: 0 !important;
-  `}
-
-  ${props => props.borderBottom && css`
-    border-bottom: 1px solid ${borderColor};
-  `}
-
-  ${props => props.flushTop && css`
-    padding-top: 0 !important;
-  `}
-
-  ${props => props.flushBottom && css`
-    padding-bottom: 0 !important;
-  `}
-
-  ${media.small`
+  ${props =>
+    props.alt &&
+    css`
+      background-color: ${offWhite};
+    `} ${props =>
+      props.center &&
+      css`
+        text-align: center;
+      `} ${props =>
+      props.flush &&
+      css`
+        padding: 0 !important;
+      `} ${props =>
+      props.borderBottom &&
+      css`
+        border-bottom: 1px solid ${borderColor};
+      `} ${props =>
+      props.flushTop &&
+      css`
+        padding-top: 0 !important;
+      `} ${props =>
+      props.flushBottom &&
+      css`
+        padding-bottom: 0 !important;
+      `} ${media.small`
     ${verticalPadding`4rem`};
   `};
 
@@ -76,7 +76,15 @@ const Block = styled.div`
 `
 
 const Section = ({ className, flush, flushTop, flushBottom, borderBottom, alt, center, children }) => (
-  <Container flush={flush} flushTop={flushTop} borderBottom={borderBottom} flushBottom={flushBottom} className={className} alt={alt} center={center}>
+  <Container
+    flush={flush}
+    flushTop={flushTop}
+    borderBottom={borderBottom}
+    flushBottom={flushBottom}
+    className={className}
+    alt={alt}
+    center={center}
+  >
     {children}
   </Container>
 )
@@ -92,11 +100,7 @@ Section.propTypes = {
   alt: bool
 }
 
-export const SectionBlock = ({ children, className }) => (
-  <Block className={className}>
-    {children}
-  </Block>
-)
+export const SectionBlock = ({ children, className }) => <Block className={className}>{children}</Block>
 
 SectionBlock.propTypes = {
   children: node.isRequired,

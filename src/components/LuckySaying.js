@@ -126,11 +126,18 @@ const LuckySaying = () => (
   <Container>
     <Wrapper>
       <Inner>
-        <Figure><img src={require(`static/images/illustrations/elephant.png`)} /></Figure>
+        <Figure>
+          <img src={require(`static/images/illustrations/elephant.png`)} />
+        </Figure>
         <Content>
           <Title>Your lucky saying</Title>
-          <Subtitle>Although FortuneCookies are produced in limited edition batches, each FortuneCookie contains a unique proverb that is made for you.</Subtitle>
-          <ButtonLink large to="/bake-sale/" primary>View bake sale</ButtonLink>
+          <Subtitle>
+            Although FortuneCookies are produced in limited edition batches, each FortuneCookie contains a unique
+            proverb that is made for you.
+          </Subtitle>
+          <ButtonLink large to="/bake-sale/" primary>
+            View bake sale
+          </ButtonLink>
         </Content>
       </Inner>
     </Wrapper>

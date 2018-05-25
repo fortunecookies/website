@@ -20,11 +20,7 @@ const Container = styled.div`
   `};
 `
 
-const GridRow = ({ children }) => (
-  <Container>
-    {children}
-  </Container>
-)
+const GridRow = ({ children }) => <Container>{children}</Container>
 
 GridRow.propTypes = {
   children: node.isRequired

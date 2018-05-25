@@ -59,9 +59,7 @@ const AboutBlock = ({ lead, title, description, children }) => (
     <Lead>{lead}</Lead>
     <Title>{title}</Title>
     <Description>{description}</Description>
-    {children.map((item, i) =>
-      <Item key={i}>{item}</Item>
-    )}
+    {children.map((item, i) => <Item key={i}>{item}</Item>)}
   </Container>
 )
 

@@ -137,10 +137,17 @@ const Hero = () => (
           <MobileFigure>
             <img src={require(`static/images/illustrations/hero.png`)} />
           </MobileFigure>
-          <Subtitle>FortuneCookies are digital collectibles consisting of a charm, limited edition artwork, and a made-specifically-for-you lucky saying.</Subtitle>
+          <Subtitle>
+            FortuneCookies are digital collectibles consisting of a charm, limited edition artwork, and a
+            made-specifically-for-you lucky saying.
+          </Subtitle>
           <ButtonGroup>
-            <ButtonLink large to="/bake-sale/" primary>View bake sale</ButtonLink>
-            <ButtonLink large to="/how-to-play/" secondary>How to play</ButtonLink>
+            <ButtonLink large to="/bake-sale/" primary>
+              View bake sale
+            </ButtonLink>
+            <ButtonLink large to="/how-to-play/" secondary>
+              How to play
+            </ButtonLink>
           </ButtonGroup>
         </Main>
         <DesktopFigure>

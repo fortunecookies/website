@@ -12,11 +12,11 @@ const Container = styled.div`
   align-items: center;
   margin: -${stripUnit(spacing.small) * 0.75 + 'px'};
 
-  ${props => props.full && css`
-    display: flex;
-  `}
-
-  ${media.medium`
+  ${props =>
+    props.full &&
+    css`
+      display: flex;
+    `} ${media.medium`
     margin: -${spacing.small};
   `};
 `
@@ -24,11 +24,11 @@ const Container = styled.div`
 const Item = styled.div`
   padding: ${stripUnit(spacing.small) * 0.75 + 'px'};
 
-  ${props => props.full && css`
-    width: 100%;
-  `}
-
-  ${media.medium`
+  ${props =>
+    props.full &&
+    css`
+      width: 100%;
+    `} ${media.medium`
     padding: ${spacing.small};
   `};
 `

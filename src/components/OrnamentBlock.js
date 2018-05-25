@@ -11,10 +11,9 @@ const Container = styled.div`
   z-index: 10;
   box-shadow: 0 12px 24px 0 ${rgba(black, 0.2)};
   background: url(${require('static/images/ornaments/top-left.png')}) top 20px left 20px no-repeat,
-  url(${require('static/images/ornaments/top-right.png')}) top 20px right 20px no-repeat,
-  url(${require('static/images/ornaments/bottom-left.png')}) bottom 20px left 20px no-repeat,
-  url(${require('static/images/ornaments/bottom-right.png')}) bottom 20px right 20px no-repeat,
-  ${white};
+    url(${require('static/images/ornaments/top-right.png')}) top 20px right 20px no-repeat,
+    url(${require('static/images/ornaments/bottom-left.png')}) bottom 20px left 20px no-repeat,
+    url(${require('static/images/ornaments/bottom-right.png')}) bottom 20px right 20px no-repeat, ${white};
   min-height: 400px;
   background-size: 47px 35px;
 `
@@ -23,7 +22,7 @@ const VerticalLine = styled.div`
   position: absolute;
   width: 2px;
   height: 100px;
-  background-color: #EA4150;
+  background-color: #ea4150;
 
   ${media.medium`
     height: auto;
@@ -61,7 +60,7 @@ const VerticalLine = styled.div`
 const HorizontalLine = styled.div`
   position: absolute;
   height: 2px;
-  background-color: #EA4150;
+  background-color: #ea4150;
 
   ${media.medium`
     width: 100px;

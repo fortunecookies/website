@@ -72,15 +72,11 @@ const Checkbox = ({ label, hint, checked }) => (
     <Control>
       <Input />
       <Indicator>
-        <Check icon='checkmark-small' white />
+        <Check icon="checkmark-small" white />
       </Indicator>
     </Control>
-    <Label>
-      {label}
-    </Label>
-    {hint &&
-      <Hint>{hint}</Hint>
-    }
+    <Label>{label}</Label>
+    {hint && <Hint>{hint}</Hint>}
   </Container>
 )
 

@@ -20,7 +20,11 @@ const Container = styled.div`
 
 const Loading = ({ pastDelay }) => {
   if (!pastDelay) return null
-  return <Container><Spinner /></Container>
+  return (
+    <Container>
+      <Spinner />
+    </Container>
+  )
 }
 
 Loading.propTypes = {

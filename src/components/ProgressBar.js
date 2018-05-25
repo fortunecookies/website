@@ -41,7 +41,7 @@ const Fill = styled.div`
 const ProgressBar = ({ progress, ...rest }) => (
   <Container>
     <Bar>
-      <Fill style={{ 'width': progress + '%' }} />
+      <Fill style={{ width: progress + '%' }} />
     </Bar>
   </Container>
 )

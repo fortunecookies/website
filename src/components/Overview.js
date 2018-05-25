@@ -14,7 +14,7 @@ const Container = styled.div`
   position: relative;
   width: 100%;
   background-color: ${primaryColor};
-  background-image: radial-gradient(ellipse farthest-corner at center top, #FC920E 0%, #8F082D 100%);
+  background-image: radial-gradient(ellipse farthest-corner at center top, #fc920e 0%, #8f082d 100%);
   background-size: cover;
   background-position: center;
   text-align: center;
@@ -111,11 +111,18 @@ const Overview = () => (
     <Wrapper>
       <Inner>
         <OrnamentBlock>
-          <Figure><img src={require(`static/images/illustrations/charm.png`)} /></Figure>
+          <Figure>
+            <img src={require(`static/images/illustrations/charm.png`)} />
+          </Figure>
           <Content>
             <Title>What's a charm?</Title>
-            <Subtitle>Every FortuneCookies batch is symbolized by a charm. This charm is the image that appears in your collectibles wallet and allows you to associate your FortuneCookie with a larger set, or generation.</Subtitle>
-            <ButtonLink large to="/bake-sale/" primary>View bake sale</ButtonLink>
+            <Subtitle>
+              Every FortuneCookies batch is symbolized by a charm. This charm is the image that appears in your
+              collectibles wallet and allows you to associate your FortuneCookie with a larger set, or generation.
+            </Subtitle>
+            <ButtonLink large to="/bake-sale/" primary>
+              View bake sale
+            </ButtonLink>
           </Content>
         </OrnamentBlock>
       </Inner>

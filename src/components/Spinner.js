@@ -30,8 +30,6 @@ const SpinnerIcon = styled(Icon)`
   `};
 `
 
-const Spinner = () => (
-  <SpinnerIcon icon="spinner" />
-)
+const Spinner = () => <SpinnerIcon icon="spinner" />
 
 export default Spinner

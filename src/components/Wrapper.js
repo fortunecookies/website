@@ -28,11 +28,7 @@ const Container = styled.div`
   `};
 `
 
-const Wrapper = ({ children, narrow, ...rest }) => (
-  <Container narrow={narrow}>
-    {children}
-  </Container>
-)
+const Wrapper = ({ children, narrow, ...rest }) => <Container narrow={narrow}>{children}</Container>
 
 Wrapper.propTypes = {
   children: node.isRequired,

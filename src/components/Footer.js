@@ -26,9 +26,7 @@ const Container = styled.div`
   ${media.medium`
     padding-left: 48px;
     padding-right: 48px;
-  `}
-
-  ${mediaDown.medium`
+  `} ${mediaDown.medium`
     text-align: center;
   `};
 `
@@ -122,12 +120,10 @@ const Copyright = styled.small`
 
   ${media.small`
     margin-bottom: ${spacing.tiny};
-  `}
-
-  ${media.medium`
+  `} ${media.medium`
     margin-bottom: 0;
     margin-right: ${spacing.medium};
-  `}
+  `};
 `
 
 const FooterList = styled.div`
@@ -172,9 +168,15 @@ const Footer = () => (
           </FooterList>
         </Main>
         <SocialList>
-          <SocialLink href="https://twitter.com/FTNCookies" target="_blank"><Icon icon="twitter" brand /></SocialLink>
-          <SocialLink href="https://t.me/ftncookies" target="_blank"><Icon icon="telegram" brand /></SocialLink>
-          <SocialLink href="https://medium.com/fortunecookies" target="_blank"><Icon icon="medium" brand /></SocialLink>
+          <SocialLink href="https://twitter.com/FTNCookies" target="_blank">
+            <Icon icon="twitter" brand />
+          </SocialLink>
+          <SocialLink href="https://t.me/ftncookies" target="_blank">
+            <Icon icon="telegram" brand />
+          </SocialLink>
+          <SocialLink href="https://medium.com/fortunecookies" target="_blank">
+            <Icon icon="medium" brand />
+          </SocialLink>
         </SocialList>
       </Inner>
     </Wrap>

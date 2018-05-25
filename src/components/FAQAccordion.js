@@ -24,9 +24,11 @@ const Container = styled.div`
     margin-bottom: 0;
   }
 
-  ${props => props.expanded && css`
-    border-color: ${primaryColor};
-  `}
+  ${props =>
+    props.expanded &&
+    css`
+      border-color: ${primaryColor};
+    `};
 `
 
 const Question = styled.header`

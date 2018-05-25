@@ -153,9 +153,13 @@ const Nav = () => (
   <Container>
     <List>
       <Cloud src={require(`static/images/ornaments/cloud.svg`)} raw />
-      <StyledLink exact to="/how-to-play/">How to play</StyledLink>
+      <StyledLink exact to="/how-to-play/">
+        How to play
+      </StyledLink>
       <Divider src={require(`static/images/ornaments/ethereum.png`)} />
-      <StyledLink exact to="/faqs/">FAQs</StyledLink>
+      <StyledLink exact to="/faqs/">
+        FAQs
+      </StyledLink>
       <LogoWrap to="/">
         <Logo src={require(`static/images/logo.png`)} />
       </LogoWrap>
@@ -164,7 +168,9 @@ const Nav = () => (
         <Tag>Open</Tag>
       </StyledLink>
       <Divider src={require(`static/images/ornaments/ethereum.png`)} />
-      <StyledLink exact to="#">Sign In</StyledLink>
+      <StyledLink exact to="#">
+        Sign In
+      </StyledLink>
       <Cloud src={require(`static/images/ornaments/cloud.svg`)} raw />
     </List>
     <Lantern src={require(`static/images/ornaments/lantern.png`)} />

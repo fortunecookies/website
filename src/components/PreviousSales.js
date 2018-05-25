@@ -16,7 +16,7 @@ const Container = styled(Section)`
   position: relative;
   width: 100%;
   background-color: ${primaryColor};
-  background-image: linear-gradient(226deg, #D50038 0%, #870023 100%);
+  background-image: linear-gradient(226deg, #d50038 0%, #870023 100%);
   background-size: cover;
   background-position: center;
   text-align: center;
@@ -133,13 +133,13 @@ const PreviousSales = ({ sales }) => (
           <Title>Previous Bake Sales</Title>
           <Content>
             <List>
-              {sales.map((sale, i) =>
+              {sales.map((sale, i) => (
                 <Sale key={i}>
                   <SaleFigure src={require(`static/images/${sale.figure}.png`)} />
                   <SaleName>{sale.name}</SaleName>
                   <SalePrice>{sale.price}</SalePrice>
                 </Sale>
-              )}
+              ))}
             </List>
           </Content>
         </OrnamentBlock>
