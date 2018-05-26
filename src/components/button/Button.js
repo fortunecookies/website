@@ -37,11 +37,15 @@ export const ButtonContainer = styled.button`
     css`
       min-width: 130px;
       height: ${stripUnit(buttonHeightMobile) * 1.05 + 'px'};
-    `} ${props =>
-      props.isLoading &&
-      css`
-        pointer-events: none;
-      `} ${media.small`
+    `}
+
+  ${props =>
+    props.isLoading &&
+    css`
+      pointer-events: none;
+    `}
+
+  ${media.small`
     padding: 0 ${spacing.xLarge};
     min-width: 160px;
   `};
@@ -73,24 +77,30 @@ export const ButtonContainer = styled.button`
       &:active {
         background-color: ${mix(0.93, primaryColor, black)};
       }
-    `} ${props =>
-      props.secondary &&
-      css`
-        background-color: transparent;
-        color: ${primaryColor};
-        border: 2px solid ${primaryColor};
+    `}
 
-        &:hover,
-        &:focus,
-        &:active {
-          background-color: ${primaryColor};
-          color: ${white};
-        }
-      `} ${props =>
-      props.full &&
-      css`
-        width: 100%;
-      `} &[disabled] {
+  ${props =>
+    props.secondary &&
+    css`
+      background-color: transparent;
+      color: ${primaryColor};
+      border: 2px solid ${primaryColor};
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: ${primaryColor};
+        color: ${white};
+      }
+    `}
+
+  ${props =>
+    props.full &&
+    css`
+      width: 100%;
+    `}
+
+  &[disabled] {
     cursor: default;
     pointer-events: none;
     opacity: 0.5;

@@ -69,7 +69,7 @@ const BakeSale = () => (
       ]}
     />
     <SignInModal />
-    <CharmModal quote="Don't pursue happiness. Create it." numbers="0, 1, 10" figure="artwork.jpg" visible />
+    <CharmModal quote="Don't pursue happiness. Create it." numbers="0, 1, 10" figure="artwork.jpg" />
   </>
 )
 

@@ -168,7 +168,7 @@ const Nav = () => (
         <Tag>Open</Tag>
       </StyledLink>
       <Divider src={require(`static/images/ornaments/ethereum.png`)} />
-      <StyledLink exact to="#">
+      <StyledLink exact to="/my-account/">
         Sign In
       </StyledLink>
       <Cloud src={require(`static/images/ornaments/cloud.svg`)} raw />
