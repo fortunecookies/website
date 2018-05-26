@@ -15,10 +15,6 @@ const Container = styled.div`
     url(${require('static/images/ornaments/bottom-left.png')}) bottom 20px left 20px no-repeat,
     url(${require('static/images/ornaments/bottom-right.png')}) bottom 20px right 20px no-repeat, ${white};
   background-size: 47px 35px;
-
-  ${media.medium`
-    min-height: 400px;
-  `};
 `
 
 const VerticalLine = styled.div`

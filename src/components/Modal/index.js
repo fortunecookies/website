@@ -7,7 +7,7 @@ import Icon from 'components/Icon'
 import * as spacing from 'styles/spacing'
 import { media, mediaDown } from 'styles/media'
 import { black } from 'styles/colors'
-import { animationTime, animationCurve, borderRadius, boxShadow } from 'styles/global'
+import { animationTime, animationCurve, borderRadius } from 'styles/global'
 import { rgba } from 'polished'
 
 const Container = styled.div`
@@ -56,10 +56,9 @@ const Inner = styled.div`
   position: relative;
   margin: 0 auto;
   width: 100%;
-  max-width: 540px;
+  max-width: ${props => (props.narrow ? '440px' : '560px')};
   border-radius: ${borderRadius};
   z-index: 450;
-  ${boxShadow};
 `
 
 const Close = styled.button`
@@ -73,12 +72,12 @@ const Close = styled.button`
   `};
 `
 
-const Modal = ({ children, visible, close = () => {}, ...rest }) => (
+const Modal = ({ children, visible, narrow, close = () => {}, ...rest }) => (
   <Portal>
     <Container visible={visible}>
       <Table>
         <Cell>
-          <Inner>{children}</Inner>
+          <Inner narrow={narrow}>{children}</Inner>
         </Cell>
       </Table>
       <Close onClick={close}>
@@ -91,6 +90,7 @@ const Modal = ({ children, visible, close = () => {}, ...rest }) => (
 Modal.propTypes = {
   children: node.isRequired,
   visible: bool,
+  narrow: bool,
   close: func
 }
 

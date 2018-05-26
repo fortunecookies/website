@@ -7,7 +7,7 @@ import * as spacing from 'styles/spacing'
 import Icon from 'components/Icon'
 import { greyDark, borderColor, primaryColor } from 'styles/colors'
 import { media } from 'styles/media'
-import { H4 } from 'styles/typography'
+import { H4, headingLineHeight } from 'styles/typography'
 
 const Container = styled.div`
   position: relative;
@@ -50,6 +50,7 @@ const QuestionTitle = styled(H4)`
   margin-bottom: 0;
   color: ${greyDark};
   flex-grow: 1;
+  line-height: ${stripUnit(headingLineHeight) * 1.25};
   padding-right: ${spacing.medium};
 
   ${media.medium`
