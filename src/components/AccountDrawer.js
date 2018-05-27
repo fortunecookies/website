@@ -53,7 +53,7 @@ const AccountDrawer = () => (
     <Wrapper>
       <EmptyState>
         <Title>You don't have any good fortune charms yet :(</Title>
-        <Button primary>Sign Out</Button>
+        <Button tertiary>Sign Out</Button>
       </EmptyState>
     </Wrapper>
   </Container>
