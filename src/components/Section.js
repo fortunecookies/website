@@ -14,26 +14,26 @@ const Container = styled.section`
     css`
       background-color: ${offWhite};
     `} ${props =>
-      props.center &&
-      css`
-        text-align: center;
-      `} ${props =>
-      props.flush &&
-      css`
-        padding: 0 !important;
-      `} ${props =>
-      props.borderBottom &&
-      css`
-        border-bottom: 1px solid ${borderColor};
-      `} ${props =>
-      props.flushTop &&
-      css`
-        padding-top: 0 !important;
-      `} ${props =>
-      props.flushBottom &&
-      css`
-        padding-bottom: 0 !important;
-      `} ${media.small`
+  props.center &&
+  css`
+    text-align: center;
+  `} ${props =>
+  props.flush &&
+  css`
+    padding: 0 !important;
+  `} ${props =>
+  props.borderBottom &&
+  css`
+    border-bottom: 1px solid ${borderColor};
+  `} ${props =>
+  props.flushTop &&
+  css`
+    padding-top: 0 !important;
+  `} ${props =>
+  props.flushBottom &&
+  css`
+    padding-bottom: 0 !important;
+  `} ${media.small`
     ${verticalPadding`4rem`};
   `};
 

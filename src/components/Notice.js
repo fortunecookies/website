@@ -25,11 +25,11 @@ const Container = styled.div`
       background-color: ${rgba(primaryColor, 0.1)};
       color: ${primaryColor};
     `} ${props =>
-      props.type === 'positive' &&
-      css`
-        background-color: ${rgba(green, 0.15)};
-        color: ${green};
-      `};
+    props.type === 'positive' &&
+    css`
+      background-color: ${rgba(green, 0.15)};
+      color: ${green};
+    `};
 `
 
 const Notice = ({ type, text }) => (
