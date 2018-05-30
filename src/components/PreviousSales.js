@@ -91,7 +91,7 @@ const Sale = styled.div`
   width: 100%;
 
   ${media.medium`
-    flex-basis: 33.333%
+    flex-basis: 33.333%;
   `};
 
   & + & {
