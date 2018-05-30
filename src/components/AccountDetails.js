@@ -10,9 +10,9 @@ import { H2, H3 } from 'styles/typography'
 import { black } from 'styles/colors'
 import { animationTime, animationCurve } from 'styles/global'
 import Wrapper from 'components/Wrapper'
-import Button from 'components/button/Button'
 import GridRow from 'components/grid/GridRow'
 import GridItem from 'components/grid/GridItem'
+// import Button from 'components/button/Button'
 
 // const Title = styled(H2)`
 //   margin-bottom: ${spacing.medium};
@@ -71,10 +71,6 @@ const AccountDetails = ({ charms }) => (
             </GridItem>
           ))}
         </GridRow>
-      </SectionBlock>
-
-      <SectionBlock>
-        <Button secondary>Sign Out</Button>
       </SectionBlock>
     </Wrapper>
   </Section>

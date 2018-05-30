@@ -5,9 +5,11 @@ import InlineSVG from 'svg-inline-react'
 import { stripUnit } from 'polished'
 
 import * as spacing from 'styles/spacing'
-import { greyDark, primaryColor, white, secondaryColor } from 'styles/colors'
+import { greyDark, primaryColor, borderColor, white, secondaryColor } from 'styles/colors'
 import { tinyFontSize } from 'styles/typography'
+import { boxShadow, borderRadius, animationTime, animationCurve } from 'styles/global'
 import SmallCaps from 'components/SmallCaps'
+import Icon from 'components/Icon'
 import { media, mediaDown } from 'styles/media'
 
 const Container = styled.div`
@@ -34,18 +36,40 @@ const Container = styled.div`
 
 const StyledLink = SmallCaps.withComponent(NavLink).extend`
   position: relative;
-  display: block;
+  display: flex;
+  align-items: center;
   color: ${greyDark};
   text-align: center;
   padding: ${spacing.medium};
+  transition: opacity ${animationTime} ${animationCurve};
+
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+  }
 
   &.${'active'} {
     color: ${primaryColor};
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
   }
 
   ${mediaDown.medium`
     display: none;
   `};
+`
+
+const DropdownTrigger = StyledLink.withComponent('button').extend`
+  position: relative;
+  transition: opacity ${animationTime} ${animationCurve};
+
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+  }
 `
 
 const Tag = styled.span`
@@ -150,6 +174,52 @@ const Lantern = styled.img`
   }
 `
 
+const DropdownWrapper = styled.div`
+  position: relative;
+
+  ${mediaDown.medium`
+    display: none;
+  `};
+`
+
+const Dropdown = styled.div`
+  position: absolute;
+  top: 100%;
+  left: -${spacing.small};
+  width: 190px;
+  margin-top: -${spacing.small};
+  padding: ${spacing.large};
+  background-color: ${white};
+  border-radius: ${borderRadius};
+  text-align: left;
+  border: 1px solid ${borderColor};
+  opacity: 0;
+  transform: translateY(-${spacing.tiny});
+  transition: opacity ${animationTime} ${animationCurve}, transform ${animationTime} ${animationCurve};
+  z-index: 20;
+  ${boxShadow};
+
+  > * + * {
+    margin-top: ${spacing.small};
+  }
+
+  ${DropdownWrapper}:hover & {
+    opacity: 1;
+    transform: none;
+  }
+`
+
+const DropdownLink = StyledLink.extend`
+  padding: 0;
+  text-align: left;
+  display: block;
+  width: 100%;
+`
+
+const DropdownButton = DropdownLink.withComponent('button').extend`
+  position: relative;
+`
+
 const Nav = () => (
   <Container>
     <List>
@@ -169,9 +239,18 @@ const Nav = () => (
         <Tag>Open</Tag>
       </StyledLink>
       <Divider src={require(`static/images/ornaments/ethereum.png`)} />
-      <StyledLink exact to="/my-account/">
-        My Account
-      </StyledLink>
+      <DropdownWrapper>
+        <DropdownTrigger>
+          My Account
+          <Icon icon="dropdown" />
+        </DropdownTrigger>
+        <Dropdown>
+          <DropdownLink exact to="/my-account/">
+            My Fortunes
+          </DropdownLink>
+          <DropdownButton>Sign out</DropdownButton>
+        </Dropdown>
+      </DropdownWrapper>
       <Cloud src={require(`static/images/ornaments/cloud.svg`)} raw />
     </List>
     <Lantern src={require(`static/images/ornaments/lantern.png`)} />
