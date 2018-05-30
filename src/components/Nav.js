@@ -8,6 +8,7 @@ import * as spacing from 'styles/spacing'
 import { greyDark, primaryColor, white, secondaryColor } from 'styles/colors'
 import { tinyFontSize } from 'styles/typography'
 import SmallCaps from 'components/SmallCaps'
+import MyAccount from 'components/MyAccount'
 import { media, mediaDown } from 'styles/media'
 
 const Container = styled.div`
@@ -34,6 +35,7 @@ const Container = styled.div`
 
 const StyledLink = SmallCaps.withComponent(NavLink).extend`
   position: relative;
+  display: block;
   color: ${greyDark};
   text-align: center;
   padding: ${spacing.medium};
@@ -45,6 +47,10 @@ const StyledLink = SmallCaps.withComponent(NavLink).extend`
   ${mediaDown.medium`
     display: none;
   `};
+`
+
+const StyledSpan = StyledLink.withComponent('span').extend`
+  position: relative;
 `
 
 const Tag = styled.span`
@@ -168,9 +174,7 @@ const Nav = () => (
         <Tag>Open</Tag>
       </StyledLink>
       <Divider src={require(`static/images/ornaments/ethereum.png`)} />
-      <StyledLink exact to="/my-account/">
-        Sign In
-      </StyledLink>
+      <MyAccount label={<StyledSpan>My Account</StyledSpan>} />
       <Cloud src={require(`static/images/ornaments/cloud.svg`)} raw />
     </List>
     <Lantern src={require(`static/images/ornaments/lantern.png`)} />
