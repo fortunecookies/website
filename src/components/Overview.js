@@ -1,14 +1,25 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+import { rgba } from 'polished'
 
 import * as spacing from 'styles/spacing'
 import { media } from 'styles/media'
 import { verticalPadding } from 'styles/global'
 import { H2 } from 'styles/typography'
-import { primaryColor } from 'styles/colors'
+import { primaryColor, black } from 'styles/colors'
 import Wrapper from 'components/Wrapper'
 import OrnamentBlock from 'components/OrnamentBlock'
 import { ButtonLink } from 'components/button/Button'
+
+const float = keyframes`
+  from, to {
+    transform: none;
+  }
+
+  65% {
+    transform: translate(0, 5px);
+  }
+`
 
 const Container = styled.div`
   position: relative;
@@ -78,6 +89,8 @@ const Figure = styled.div`
   width: 182px;
   margin-bottom: ${spacing.large};
   margin-top: -${spacing.xxLarge};
+  animation: ${float} 4s ease-in-out infinite;
+  filter: drop-shadow(0 22px 26px ${rgba(black, 0.25)});
 
   ${media.medium`
     margin-bottom: ${spacing.xLarge};

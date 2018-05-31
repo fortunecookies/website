@@ -1,7 +1,8 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { array } from 'prop-types'
 import { rgba } from 'polished'
+import { randomNumber } from 'utils/helpers'
 
 import * as spacing from 'styles/spacing'
 import { media, mediaDown } from 'styles/media'
@@ -11,6 +12,20 @@ import Wrapper from 'components/Wrapper'
 import SmallCaps from 'components/SmallCaps'
 import OrnamentBlock from 'components/OrnamentBlock'
 import Section from 'components/Section'
+
+function createFloatAnimation(delay) {
+  return `${float} 4s ease-in-out ${delay}s infinite;`
+}
+
+const float = keyframes`
+  from, to {
+    transform: none;
+  }
+
+  65% {
+    transform: translate(0, 5px);
+  }
+`
 
 const Container = styled(Section)`
   position: relative;
@@ -105,8 +120,7 @@ const SaleFigure = styled.img`
   width: 160px;
   margin: 0 auto ${spacing.large};
   filter: drop-shadow(0 22px 26px ${rgba(black, 0.25)});
-
-  ${media.small`
+  animation: ${props => createFloatAnimation(props.animationDelay)} ${media.small`
     width: 200px;
   `};
 
@@ -135,7 +149,7 @@ const PreviousSales = ({ sales }) => (
             <List>
               {sales.map((sale, i) => (
                 <Sale key={i}>
-                  <SaleFigure src={require(`static/images/${sale.figure}.png`)} />
+                  <SaleFigure animationDelay={randomNumber(1, 3)} src={require(`static/images/${sale.figure}.png`)} />
                   <SaleName>{sale.name}</SaleName>
                   <SalePrice>{sale.price}</SalePrice>
                 </Sale>
