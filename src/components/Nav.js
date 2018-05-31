@@ -37,11 +37,16 @@ const Container = styled.div`
 const StyledLink = SmallCaps.withComponent(NavLink).extend`
   position: relative;
   display: flex;
+  justify-content: center;
   align-items: center;
   color: ${greyDark};
   text-align: center;
   padding: ${spacing.medium};
   transition: opacity ${animationTime} ${animationCurve};
+
+  ${media.xLarge`
+    width: 156px;
+  `};
 
   &:hover,
   &:focus {

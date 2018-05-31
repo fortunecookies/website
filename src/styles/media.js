@@ -3,7 +3,7 @@ import { css } from 'styled-components'
 // Breakpoints
 export const breakpoints = {
   small: 600,
-  medium: 920,
+  medium: 960,
   large: 1200,
   xLarge: 1420
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { string, node, number } from 'prop-types'
 import { stripUnit } from 'polished'
+import { isTouchDevice } from 'utils/helpers'
 
 import * as spacing from 'styles/spacing'
 import { media, mediaDown } from 'styles/media'
@@ -11,6 +12,7 @@ import ProgressBar from 'components/ProgressBar'
 import SmallCaps from 'components/SmallCaps'
 import Countdown from 'components/Countdown'
 import Button from 'components/button/Button'
+import Notice from 'components/Notice'
 
 const Container = styled.div`
   position: relative;
@@ -145,7 +147,7 @@ const BuyButton = styled(Button)`
   margin-bottom: ${spacing.large};
   flex-shrink: 0;
 
-  ${media.small`
+  ${isTouchDevice() && 'display: none;'} ${media.small`
     margin-bottom: ${spacing.xLarge};
   `};
 
@@ -179,6 +181,11 @@ const Status = styled.div`
   `};
 `
 
+const MobileWarning = styled.div`
+  margin-top: ${spacing.large};
+  display: inline-block;
+`
+
 const SingleProduct = ({ lead, title, figure, price, averagePrice }) => (
   <Container>
     <Figure>{figure}</Figure>
@@ -194,11 +201,16 @@ const SingleProduct = ({ lead, title, figure, price, averagePrice }) => (
       </ProgressWrap>
       <Status>{/* <Notice type="positive" text="Purchased!" /> */}</Status>
       <BuyWrap>
-        <BuyButton primary large isLoading>
+        <BuyButton primary large>
           Buy Now
         </BuyButton>
         <Countdown />
       </BuyWrap>
+      {isTouchDevice() && (
+        <MobileWarning>
+          <Notice type="negative" text="To participate in the Bake Sale please visit us on a desktop or laptop" />
+        </MobileWarning>
+      )}
     </Content>
   </Container>
 )

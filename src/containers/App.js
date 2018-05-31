@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { object } from 'prop-types'
 import { Switch } from 'react-router'
-import { BrowserRouter as Router } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { Provider } from 'react-redux'
-import { AsyncRoute } from 'layouts/asyncComponents'
+import Layout from 'layouts/Layout'
 import { PersistGate } from 'redux-persist/es/integration/react'
 
 export default class App extends Component {
@@ -20,7 +20,7 @@ export default class App extends Component {
         <PersistGate persistor={persistor}>
           <Router>
             <Switch>
-              <AsyncRoute path="/" loader={() => import('layouts/Layout')} />
+              <Route path="/" component={Layout} />
             </Switch>
           </Router>
         </PersistGate>
