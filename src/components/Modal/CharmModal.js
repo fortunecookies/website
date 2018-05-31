@@ -4,13 +4,13 @@ import styled from 'styled-components'
 import { rgba } from 'polished'
 
 import OrnamentBlock from 'components/OrnamentBlock'
-import Modal from 'components/Modal'
 import { H3 } from 'styles/typography'
 import { borderRadius, animationTime, animationCurve } from 'styles/global'
 import { primaryColor, black, white, borderColor, grey } from 'styles/colors'
 import * as spacing from 'styles/spacing'
-import SmallCaps from 'components/SmallCaps'
 import { media, mediaDown } from 'styles/media'
+import SmallCaps from 'components/SmallCaps'
+import Modal from 'components/Modal'
 
 const Container = styled.div`
   position: relative;

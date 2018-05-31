@@ -199,13 +199,14 @@ const Dropdown = styled.div`
   text-align: left;
   border: 1px solid ${borderColor};
   opacity: 0;
-  transform: translateY(-${spacing.tiny});
+  transform: perspective(450px) rotateX(-15deg);
+  transform-origin: 50% 0;
   transition: opacity ${animationTime} ${animationCurve}, transform ${animationTime} ${animationCurve};
   z-index: 20;
   ${boxShadow};
 
   > * + * {
-    margin-top: ${spacing.small};
+    margin-top: ${stripUnit(spacing.small) * 1.5 + 'px'};
   }
 
   ${DropdownWrapper}:hover & {

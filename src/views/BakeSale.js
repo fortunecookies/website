@@ -6,7 +6,6 @@ import PreviousSales from 'components/PreviousSales'
 import SingleProduct from 'components/SingleProduct'
 import Section from 'components/Section'
 import SignInModal from 'components/Modal/SignInModal'
-import CharmModal from 'components/Modal/CharmModal'
 import GridRow from 'components/grid/GridRow'
 import GridItem from 'components/grid/GridItem'
 
@@ -69,7 +68,6 @@ const BakeSale = () => (
       ]}
     />
     <SignInModal />
-    <CharmModal quote="Don't pursue happiness. Create it." numbers="0, 1, 10" figure="artwork.jpg" />
   </>
 )
 

@@ -29,6 +29,8 @@ class Layout extends Component {
           <AsyncRoute exact path="/how-to-play/" loader={() => import('views/HowToPlay')} />
           <AsyncRoute exact path="/bake-sale/" loader={() => import('views/BakeSale')} />
           <AsyncRoute exact path="/my-account/" loader={() => import('views/MyAccount')} />
+          <AsyncRoute exact path="/terms/" loader={() => import('views/Terms')} />
+          <AsyncRoute exact path="/privacy-policy/" loader={() => import('views/Privacy')} />
           <Redirect to="/" />
         </Switch>
         <Footer />

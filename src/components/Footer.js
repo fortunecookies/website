@@ -163,7 +163,6 @@ const Footer = () => (
           <FooterList>
             <FooterLink to="/terms/">Terms of Use</FooterLink>
             <FooterLink to="/privacy-policy/">Privacy Policy</FooterLink>
-            <FooterLink to="/about/">About</FooterLink>
             <FooterLink to="/help/">Help & Support</FooterLink>
           </FooterList>
         </Main>
