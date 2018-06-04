@@ -136,7 +136,7 @@ const Figure = styled.div`
 `
 
 const LuckySaying = () => (
-  <Container>
+  <Container id="limited-edition">
     <Wrapper>
       <Inner>
         <Figure>

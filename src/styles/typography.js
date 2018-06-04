@@ -100,7 +100,7 @@ injectGlobal`
 
       &:hover,
       &:focus {
-        border-color: ${rgba(primaryColor, 0.15)};
+        border-color: ${rgba(primaryColor, 0.2)};
       }
     }
   }

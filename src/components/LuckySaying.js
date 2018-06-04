@@ -123,7 +123,7 @@ const Figure = styled.div`
 `
 
 const LuckySaying = () => (
-  <Container>
+  <Container id="lucky-saying">
     <Wrapper>
       <Inner>
         <Figure>
