@@ -1,6 +1,6 @@
 import React from 'react'
 import { func, bool } from 'prop-types'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { stripUnit, rgba } from 'polished'
 
 import OrnamentBlock from 'components/OrnamentBlock'
@@ -11,6 +11,9 @@ import { greyDark } from 'styles/colors'
 import * as spacing from 'styles/spacing'
 import Button from 'components/button/Button'
 import { media } from 'styles/media'
+import Input from 'components/Input'
+import Fieldset from 'components/Fieldset'
+import FieldsetItem from 'components/Fieldset/FieldsetItem'
 
 const Container = styled.div`
   text-align: center;
@@ -41,17 +44,17 @@ const Title = styled(H2)`
   `};
 `
 
-const Subtitle = styled.p`
-  margin-bottom: ${spacing.large};
+// const Subtitle = styled.p`
+//   margin-bottom: ${spacing.large};
 
-  ${media.medium`
-    margin-bottom: ${spacing.xxLarge};
-  `};
+//   ${media.medium`
+//     margin-bottom: ${spacing.xxLarge};
+//   `};
 
-  ${media.large`
-    margin-bottom: ${spacing.xxxLarge};
-  `};
-`
+//   ${media.large`
+//     margin-bottom: ${spacing.xxxLarge};
+//   `};
+// `
 
 const Dots = styled.div`
   display: flex;
@@ -68,17 +71,46 @@ const Dot = styled.div`
   margin: 0 ${spacing.tiny};
   background-color: ${rgba(greyDark, 0.2)};
   ${square`10px`};
+
+  ${props =>
+    props.active &&
+    css`
+      background-color: ${greyDark};
+    `};
 `
 
-const InviteCodeModal = ({ visible, close = () => {} }) => (
+const Form = styled.form`
+  width: 100%;
+  padding: 0 ${spacing.medium};
+  margin: ${spacing.small} auto 0;
+  max-width: 320px;
+
+  ${media.small`
+    margin-top: ${spacing.large};
+  `};
+`
+
+const SignInModal = ({ visible, close = () => {} }) => (
   <Modal visible={visible} close={close} noClose>
     <OrnamentBlock>
       <Container>
         <Title>Sign In</Title>
-        <Subtitle>Unlock your MetaMask to continue.</Subtitle>
-        <Button primary>Unlock MetaMask</Button>
+        {/* <Subtitle>Unlock your MetaMask to continue.</Subtitle>
+        <Button primary>Unlock MetaMask</Button> */}
+        <Form>
+          <Fieldset>
+            <FieldsetItem>
+              <Input placeholder="Enter your email address" />
+            </FieldsetItem>
+            <FieldsetItem>
+              <Button full primary type="submit">
+                Sign in
+              </Button>
+            </FieldsetItem>
+          </Fieldset>
+        </Form>
         <Dots>
-          <Dot />
+          <Dot active />
           <Dot />
         </Dots>
       </Container>
@@ -86,9 +118,9 @@ const InviteCodeModal = ({ visible, close = () => {} }) => (
   </Modal>
 )
 
-InviteCodeModal.propTypes = {
+SignInModal.propTypes = {
   close: func,
   visible: bool
 }
 
-export default InviteCodeModal
+export default SignInModal

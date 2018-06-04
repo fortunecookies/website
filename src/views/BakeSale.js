@@ -67,7 +67,7 @@ const BakeSale = () => (
         }
       ]}
     />
-    <SignInModal />
+    <SignInModal visible />
   </>
 )
 

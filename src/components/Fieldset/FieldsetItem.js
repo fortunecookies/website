@@ -8,11 +8,11 @@ import { media } from 'styles/media'
 import * as spacing from 'styles/spacing'
 
 const Container = styled.div`
-  padding: ${spacing.small};
+  padding: ${stripUnit(spacing.small) * 0.75 + 'px'};
   width: 100%;
 
   ${media.medium`
-    padding: ${stripUnit(spacing.small) * 1.5 + 'px'};
+    padding: ${spacing.small};
   `};
 `
 

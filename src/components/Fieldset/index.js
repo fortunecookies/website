@@ -9,10 +9,10 @@ import * as spacing from 'styles/spacing'
 const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin: -${spacing.small};
+  margin: -${stripUnit(spacing.small) * 0.75 + 'px'};
 
   ${media.medium`
-    margin: -${stripUnit(spacing.small) * 1.5 + 'px'};
+    margin: -${spacing.small};
   `};
 `
 
