@@ -5,7 +5,7 @@ import { stripUnit } from 'polished'
 
 import { media, mediaDown } from 'styles/media'
 import { verticalPadding } from 'styles/global'
-import { white } from 'styles/colors'
+import { white, black } from 'styles/colors'
 import { tinyFontSize, fontBold } from 'styles/typography'
 import * as spacing from 'styles/spacing'
 import Icon from 'components/Icon'
@@ -15,7 +15,7 @@ const currentYear = new Date().getFullYear()
 const Container = styled.div`
   position: relative;
   width: 100%;
-  background-color: ${white};
+  background-color: ${props => (props.theme.isStoreClosed ? black : white)};
   padding: 3rem ${spacing.large};
   ${verticalPadding`3rem`};
 

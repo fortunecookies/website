@@ -1,10 +1,11 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { object } from 'prop-types'
 import { Switch } from 'react-router'
 import { Redirect } from 'react-router-dom'
 import { AsyncRoute } from 'layouts/asyncComponents'
 
 import Nav from 'components/Nav'
+import Page from 'components/Page'
 import Footer from 'components/Footer'
 import MobileNav from 'components/MobileNav'
 
@@ -21,7 +22,7 @@ class Layout extends Component {
 
   render() {
     return (
-      <Fragment>
+      <Page>
         <Nav />
         <Switch>
           <AsyncRoute exact path="/" loader={() => import('views/Home')} />
@@ -36,7 +37,7 @@ class Layout extends Component {
         </Switch>
         <Footer />
         <MobileNav />
-      </Fragment>
+      </Page>
     )
   }
 }

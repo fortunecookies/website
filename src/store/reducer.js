@@ -2,8 +2,7 @@ import { persistCombineReducers } from 'redux-persist'
 import localForage from 'localforage'
 import { reducer as form } from 'redux-form'
 
-import stores from './stores/reducer'
-import auth from './auth/reducer'
+import store from './store/reducer'
 
 const config = {
   key: 'root',
@@ -13,6 +12,5 @@ const config = {
 
 export default persistCombineReducers(config, {
   form,
-  stores,
-  auth
+  store
 })

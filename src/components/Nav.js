@@ -39,7 +39,7 @@ const StyledLink = SmallCaps.withComponent(NavLink).extend`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: ${greyDark};
+  color: ${props => (props.theme.isStoreClosed ? white : greyDark)};
   text-align: center;
   padding: ${spacing.medium};
   transition: opacity ${animationTime} ${animationCurve};
@@ -220,10 +220,12 @@ const DropdownLink = StyledLink.extend`
   text-align: left;
   display: block;
   width: 100%;
+  color: ${greyDark};
 `
 
 const DropdownButton = DropdownLink.withComponent('button').extend`
   position: relative;
+  color: ${greyDark};
 `
 
 const Nav = () => (
