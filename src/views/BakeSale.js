@@ -3,6 +3,7 @@ import React from 'react'
 import Wrapper from 'components/Wrapper'
 import AboutBlock from 'components/AboutBlock'
 import PreviousSales from 'components/PreviousSales'
+// import ClosedBakeSale from 'components/ClosedBakeSale'
 import SingleProduct from 'components/SingleProduct'
 import Section from 'components/Section'
 import SignInModal from 'components/Modal/SignInModal'
@@ -11,6 +12,7 @@ import GridItem from 'components/grid/GridItem'
 
 const BakeSale = () => (
   <>
+    {/* <ClosedBakeSale /> */}
     <Section>
       <Wrapper>
         <SingleProduct
