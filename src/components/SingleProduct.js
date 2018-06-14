@@ -128,7 +128,7 @@ const ProgressWrap = styled.div`
 const PriceWrap = styled.div`
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
   margin-bottom: ${spacing.small};
 
@@ -147,7 +147,7 @@ const BuyButton = styled(Button)`
   margin-bottom: ${spacing.large};
   flex-shrink: 0;
 
-  ${isTouchDevice() && 'display: none;'} ${media.small`
+  ${media.small`
     margin-bottom: ${spacing.xLarge};
   `};
 
@@ -197,19 +197,20 @@ const SingleProduct = ({ lead, title, figure, price, averagePrice }) => (
           <Price>{price} ETH</Price>
           <SmallCaps>Avg. Sale Price: {averagePrice} ETH</SmallCaps>
         </PriceWrap>
-        <ProgressBar progress={40} />
+        <ProgressBar progress={50} amount="3 ETH" remaining="2 ETH" />
       </ProgressWrap>
       <Status>{/* <Notice type="positive" text="Purchased!" /> */}</Status>
-      <BuyWrap>
-        <BuyButton primary large>
-          Buy Now
-        </BuyButton>
-        <Countdown />
-      </BuyWrap>
-      {isTouchDevice() && (
+      {isTouchDevice() ? (
         <MobileWarning>
           <Notice type="negative" text="To participate in the Bake Sale please visit us on a desktop or laptop" />
         </MobileWarning>
+      ) : (
+        <BuyWrap>
+          <BuyButton primary large>
+            Buy Now
+          </BuyButton>
+          <Countdown />
+        </BuyWrap>
       )}
     </Content>
   </Container>

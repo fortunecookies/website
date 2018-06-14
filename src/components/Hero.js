@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 import * as spacing from 'styles/spacing'
 import { media, mediaDown } from 'styles/media'
-import { verticalPadding } from 'styles/global'
 import { H1 } from 'styles/typography'
 import { white } from 'styles/colors'
 import Wrapper from 'components/Wrapper'
@@ -13,7 +12,8 @@ import ButtonGroup from 'components/button/ButtonGroup'
 const Container = styled.div`
   width: 100%;
   background-color: ${white};
-  ${verticalPadding`3.5rem`};
+  padding-top: 2.5rem;
+  padding-bottom: 3.5rem;
 
   ${media.small`
     padding-top: 4rem;

@@ -46,14 +46,14 @@ const Number = styled(H2)`
 
 const Item = styled.div`
   text-align: center;
-  margin: 0 ${spacing.small};
+  padding: 0 ${spacing.small};
 
   ${mediaDown.medium`
-    width: 64px;
+    width: 84px;
   `};
 
   ${media.medium`
-    margin: 0 ${stripUnit(spacing.small) * 1.5 + 'px'};
+    padding: 0 ${stripUnit(spacing.small) * 1.5 + 'px'};
   `};
 `
 

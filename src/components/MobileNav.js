@@ -99,16 +99,16 @@ class MobileNav extends Component {
         <Portal>
           <Overlay visible={this.state.visible}>
             <Inner>
-              <Link exact to="/how-to-play/">
+              <Link exact to="/how-to-play/" onClick={this.toggle}>
                 How to play
               </Link>
-              <Link exact to="/faqs/">
+              <Link exact to="/faqs/" onClick={this.toggle}>
                 FAQs
               </Link>
-              <Link exact to="/bake-sale/">
+              <Link exact to="/bake-sale/" onClick={this.toggle}>
                 Bake Sale
               </Link>
-              <Link exact to="#">
+              <Link exact to="#" onClick={this.toggle}>
                 Sign In
               </Link>
             </Inner>

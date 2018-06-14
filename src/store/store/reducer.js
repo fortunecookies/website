@@ -8,7 +8,7 @@ const ACTION_HANDLERS = {
 }
 
 const initialState = {
-  status: 'closed'
+  status: 'open'
 }
 
 export default (state = initialState, action) => {
