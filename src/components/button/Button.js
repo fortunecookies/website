@@ -18,7 +18,7 @@ import {
 import * as spacing from 'styles/spacing'
 import { media } from 'styles/media'
 
-export const ButtonContainer = styled.button`
+export const Container = styled.button`
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -129,6 +129,10 @@ export const ButtonContainer = styled.button`
   }
 `
 
+const LinkContainer = Container.withComponent(Link)
+
+const HrefContainer = Container.withComponent('a')
+
 const Spinner = styled(InlineSVG)`
   position: absolute;
   top: 50%;
@@ -139,10 +143,6 @@ const Spinner = styled(InlineSVG)`
   ${media.medium`
     ${square`64px`};
   `};
-`
-
-export const ButtonLinkContainer = ButtonContainer.withComponent(Link).extend`
-  position: relative;
 `
 
 const Label = styled(SmallCaps)`
@@ -156,30 +156,30 @@ const Label = styled(SmallCaps)`
     `};
 `
 
-const Button = ({
-  children,
-  primary,
-  secondary,
-  tertiary,
-  large,
-  full,
-  isLoading,
-  Container = ButtonContainer,
-  ...rest
-}) => (
-  <Container
-    primary={primary}
-    secondary={secondary}
-    tertiary={tertiary}
-    isLoading={isLoading}
-    large={large}
-    full={full}
-    {...rest}
-  >
-    {isLoading && <Spinner src={require(`static/images/loading.svg`)} raw />}
-    <Label isLoading={isLoading}>{children}</Label>
-  </Container>
-)
+const getContainer = props => {
+  if (props.to) return LinkContainer
+  if (props.href) return HrefContainer
+  return Container
+}
+
+const Button = ({ children, primary, secondary, tertiary, large, full, isLoading, ...rest }) => {
+  const ActualContainer = getContainer(rest)
+
+  return (
+    <ActualContainer
+      primary={primary}
+      secondary={secondary}
+      tertiary={tertiary}
+      isLoading={isLoading}
+      large={large}
+      full={full}
+      {...rest}
+    >
+      {isLoading && <Spinner src={require(`static/images/loading.svg`)} raw />}
+      <Label isLoading={isLoading}>{children}</Label>
+    </ActualContainer>
+  )
+}
 
 Button.propTypes = {
   children: node.isRequired,
@@ -190,31 +190,6 @@ Button.propTypes = {
   isLoading: bool,
   full: bool,
   Container: func
-}
-
-export const ButtonLink = ({ children, primary, secondary, tertiary, large, full, isLoading, ...rest }) => (
-  <ButtonLinkContainer
-    primary={primary}
-    secondary={secondary}
-    tertiary={tertiary}
-    isLoading={isLoading}
-    large={large}
-    full={full}
-    {...rest}
-  >
-    {isLoading && <Spinner src={require(`static/images/loading.svg`)} raw />}
-    <Label isLoading={isLoading}>{children}</Label>
-  </ButtonLinkContainer>
-)
-
-ButtonLink.propTypes = {
-  children: node.isRequired,
-  primary: bool,
-  secondary: bool,
-  tertiary: bool,
-  large: bool,
-  isLoading: bool,
-  full: bool
 }
 
 export default Button

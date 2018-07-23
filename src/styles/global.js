@@ -51,6 +51,15 @@ export function cover(position) {
 // Styles
 
 injectGlobal`
+
+  body {
+    min-height: 100vh;
+
+    &.is-clipped {
+      overflow: hidden;
+    }
+  }
+
   ${Normalize};
   ${Width};
   ${Utilities};

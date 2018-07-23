@@ -9,7 +9,7 @@ import { H2 } from 'styles/typography'
 import { primaryColor, black } from 'styles/colors'
 import Wrapper from 'components/Wrapper'
 import OrnamentBlock from 'components/OrnamentBlock'
-import { ButtonLink } from 'components/button/Button'
+import Button from 'components/button/Button'
 
 const float = keyframes`
   from, to {
@@ -133,9 +133,9 @@ const Overview = () => (
               Every FortuneCookies batch is symbolized by a charm. This charm is the image that appears in your
               collectibles wallet and allows you to associate your FortuneCookie with a larger set, or generation.
             </Subtitle>
-            <ButtonLink large to="/bake-sale/" primary>
+            <Button large to="/bake-sale/" primary>
               View bake sale
-            </ButtonLink>
+            </Button>
           </Content>
         </OrnamentBlock>
       </Inner>

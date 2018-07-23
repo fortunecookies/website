@@ -113,7 +113,7 @@ const Logo = styled.img`
   height: 106px;
   display: block;
 
-  ${media.small`
+  ${media.large`
     width: 182px;
     height: 127px;
   `};

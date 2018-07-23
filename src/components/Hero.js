@@ -6,7 +6,7 @@ import { media, mediaDown } from 'styles/media'
 import { H1 } from 'styles/typography'
 import { white } from 'styles/colors'
 import Wrapper from 'components/Wrapper'
-import { ButtonLink } from 'components/button/Button'
+import Button from 'components/button/Button'
 import ButtonGroup from 'components/button/ButtonGroup'
 
 const Container = styled.div`
@@ -142,12 +142,12 @@ const Hero = () => (
             made-specifically-for-you lucky saying.
           </Subtitle>
           <ButtonGroup>
-            <ButtonLink large to="/bake-sale/" primary>
+            <Button large to="/bake-sale/" primary>
               View bake sale
-            </ButtonLink>
-            <ButtonLink large to="/how-to-play/" secondary>
+            </Button>
+            <Button large to="/how-to-play/" secondary>
               How to play
-            </ButtonLink>
+            </Button>
           </ButtonGroup>
         </Main>
         <DesktopFigure>

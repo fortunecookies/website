@@ -7,7 +7,7 @@ import { media, mediaDown } from 'styles/media'
 import { verticalPadding } from 'styles/global'
 import { H2 } from 'styles/typography'
 import Wrapper from 'components/Wrapper'
-import { ButtonLink } from 'components/button/Button'
+import Button from 'components/button/Button'
 
 const Container = styled.div`
   position: relative;
@@ -135,9 +135,9 @@ const LuckySaying = () => (
             Although FortuneCookies are produced in limited edition batches, each FortuneCookie contains a unique
             proverb that is made for you.
           </Subtitle>
-          <ButtonLink large to="/bake-sale/" primary>
+          <Button large to="/bake-sale/" primary>
             View bake sale
-          </ButtonLink>
+          </Button>
         </Content>
       </Inner>
     </Wrapper>

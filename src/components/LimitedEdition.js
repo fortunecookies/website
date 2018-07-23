@@ -7,7 +7,7 @@ import { verticalPadding } from 'styles/global'
 import { white } from 'styles/colors'
 import { H2 } from 'styles/typography'
 import Wrapper from 'components/Wrapper'
-import { ButtonLink } from 'components/button/Button'
+import Button from 'components/button/Button'
 
 const Container = styled.div`
   position: relative;
@@ -148,9 +148,9 @@ const LuckySaying = () => (
             Every FortuneCookies batch also contains limited edition artwork. Buying a FortuneCookie entitles you to the
             rights to the associated digital art. This artwork is produced in collaboration with an artist.
           </Subtitle>
-          <ButtonLink large to="/bake-sale/" primary>
+          <Button large to="/bake-sale/" primary>
             View bake sale
-          </ButtonLink>
+          </Button>
         </Content>
       </Inner>
     </Wrapper>

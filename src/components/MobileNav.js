@@ -4,6 +4,7 @@ import { rgba } from 'polished'
 import { Portal } from 'react-portal'
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
+import ReactHelmet from 'react-helmet'
 
 import { primaryColor, white } from 'styles/colors'
 import { square, animationTime, animationCurve } from 'styles/global'
@@ -97,6 +98,7 @@ class MobileNav extends Component {
           <Icon icon={this.state.visible ? 'close' : 'hamburger'} />
         </Trigger>
         <Portal>
+          <ReactHelmet bodyAttributes={{ class: this.state.visible ? 'is-clipped' : '' }} />
           <Overlay visible={this.state.visible}>
             <Inner>
               <Link exact to="/how-to-play/" onClick={this.toggle}>
